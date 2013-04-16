@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+			"path": "src/compiler"
+		},{
+			"path": "built/local"
+		},{
+			"path": "tests/akra-test"
+		}
+	]
+}
