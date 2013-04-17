@@ -2,59 +2,1213 @@
     "modules": {
         "akra": {
             "location": "",
+            "interfaces": {
+                "ILogRoutineFunc": {
+                    "location": "akra"
+                },
+                "ISourceLocation": {
+                    "location": "akra"
+                },
+                "ILoggerEntity": {
+                    "location": "akra"
+                },
+                "ILogger": {
+                    "location": "akra"
+                },
+                "Pair": {
+                    "location": "akra"
+                },
+                "StringMap": {
+                    "location": "akra"
+                },
+                "IntMap": {
+                    "location": "akra"
+                },
+                "UintMap": {
+                    "location": "akra"
+                },
+                "FloatMap": {
+                    "location": "akra"
+                },
+                "BoolMap": {
+                    "location": "akra"
+                },
+                "BoolDMap": {
+                    "location": "akra"
+                },
+                "StringDMap": {
+                    "location": "akra"
+                },
+                "ISceneManager": {
+                    "location": "akra"
+                },
+                "IParticleManager": {
+                    "location": "akra"
+                },
+                "IResourcePoolManager": {
+                    "location": "akra"
+                },
+                "IRenderer": {
+                    "location": "akra"
+                },
+                "IUtilTimer": {
+                    "location": "akra"
+                },
+                "IMesh": {
+                    "location": "akra"
+                },
+                "IRenderDataCollection": {
+                    "location": "akra"
+                },
+                "IBufferMap": {
+                    "location": "akra"
+                },
+                "IAnimationController": {
+                    "location": "akra"
+                },
+                "ISkeleton": {
+                    "location": "akra"
+                },
+                "IScene3d": {
+                    "location": "akra"
+                },
+                "IDependens": {
+                    "location": "akra"
+                },
+                "IAFXComposer": {
+                    "location": "akra"
+                },
+                "IGamepadMap": {
+                    "location": "akra"
+                },
+                "IEngineOptions": {
+                    "location": "akra"
+                },
+                "IEngine": {
+                    "location": "akra"
+                },
+                "IManager": {
+                    "location": "akra"
+                },
+                "IUnique": {
+                    "location": "akra"
+                },
+                "IEventTable": {
+                    "location": "akra"
+                },
+                "IEventProvider": {
+                    "location": "akra"
+                },
+                "IScene": {
+                    "location": "akra"
+                },
+                "IScene2d": {
+                    "location": "akra"
+                },
+                "IUI": {
+                    "location": "akra"
+                },
+                "IResourceCode": {
+                    "location": "akra"
+                },
+                "IResourcePool": {
+                    "location": "akra"
+                },
+                "IResourceWatcherFunc": {
+                    "location": "akra"
+                },
+                "IResourcePoolItem": {
+                    "location": "akra"
+                },
+                "IRenderMethod": {
+                    "location": "akra"
+                },
+                "ITexture": {
+                    "location": "akra"
+                },
+                "IVertexBuffer": {
+                    "location": "akra"
+                },
+                "IModel": {
+                    "location": "akra"
+                },
+                "ISurfaceMaterial": {
+                    "location": "akra"
+                },
+                "IEffect": {
+                    "location": "akra"
+                },
+                "IShaderProgram": {
+                    "location": "akra"
+                },
+                "IRenderEntry": {
+                    "location": "akra"
+                },
+                "IRenderQueue": {
+                    "location": "akra"
+                },
+                "IViewportState": {
+                    "location": "akra"
+                },
+                "IAFXComponent": {
+                    "location": "akra"
+                },
+                "IAFXEffect": {
+                    "location": "akra"
+                },
+                "IRenderableObject": {
+                    "location": "akra"
+                },
+                "IRenderSnapshot": {
+                    "location": "akra"
+                },
+                "ISceneObject": {
+                    "location": "akra"
+                },
+                "IVertexData": {
+                    "location": "akra"
+                },
+                "IIndexBuffer": {
+                    "location": "akra"
+                },
+                "IRenderResource": {
+                    "location": "akra"
+                },
+                "IViewport": {
+                    "location": "akra"
+                },
+                "IColor": {
+                    "location": "akra"
+                },
+                "IRenderTarget": {
+                    "location": "akra"
+                },
+                "ICanvas3d": {
+                    "location": "akra"
+                },
+                "ISceneNode": {
+                    "location": "akra"
+                },
+                "ICamera": {
+                    "location": "akra"
+                },
+                "ILightParameters": {
+                    "location": "akra"
+                },
+                "ILightPoint": {
+                    "location": "akra"
+                },
+                "ISceneModel": {
+                    "location": "akra"
+                },
+                "ISprite": {
+                    "location": "akra"
+                },
+                "IJoint": {
+                    "location": "akra"
+                },
+                "IText3d": {
+                    "location": "akra"
+                },
+                "IDisplayList": {
+                    "location": "akra"
+                },
+                "IShadowCaster": {
+                    "location": "akra"
+                },
+                "ITerrainSection": {
+                    "location": "akra"
+                },
+                "ITerrainSectionROAM": {
+                    "location": "akra"
+                },
+                "ITerrain": {
+                    "location": "akra"
+                },
+                "ITerrainROAM": {
+                    "location": "akra"
+                },
+                "IModelEntry": {
+                    "location": "akra"
+                },
+                "IToken": {
+                    "location": "akra"
+                },
+                "IRule": {
+                    "location": "akra"
+                },
+                "IFinishFunc": {
+                    "location": "akra"
+                },
+                "IRuleFunction": {
+                    "location": "akra"
+                },
+                "IParseNode": {
+                    "location": "akra"
+                },
+                "IParseTree": {
+                    "location": "akra"
+                },
+                "ILexer": {
+                    "location": "akra"
+                },
+                "IParserState": {
+                    "location": "akra"
+                },
+                "IParser": {
+                    "location": "akra"
+                },
+                "IReferenceCounter": {
+                    "location": "akra"
+                },
+                "IResourceNotifyRoutineFunc": {
+                    "location": "akra"
+                },
+                "IResourcePoolItemType": {
+                    "location": "akra"
+                },
+                "IAFXInstructionStateMap": {
+                    "location": "akra"
+                },
+                "IAFXInstructionRoutine": {
+                    "location": "akra"
+                },
+                "IAFXInstructionError": {
+                    "location": "akra"
+                },
+                "IAFXInstructionMap": {
+                    "location": "akra"
+                },
+                "IAFXSimpleInstructionMap": {
+                    "location": "akra"
+                },
+                "IAFXIdExprMap": {
+                    "location": "akra"
+                },
+                "IAFXVariableTypeMap": {
+                    "location": "akra"
+                },
+                "IAFXTypeMap": {
+                    "location": "akra"
+                },
+                "IAFXTypeListMap": {
+                    "location": "akra"
+                },
+                "IAFXTypeDeclMap": {
+                    "location": "akra"
+                },
+                "IAFXVariableDeclMap": {
+                    "location": "akra"
+                },
+                "IAFXVariableDeclListMap": {
+                    "location": "akra"
+                },
+                "IAFXVarUsedModeMap": {
+                    "location": "akra"
+                },
+                "IAFXFunctionDeclMap": {
+                    "location": "akra"
+                },
+                "IAFXTypeUseInfoContainer": {
+                    "location": "akra"
+                },
+                "IAFXTypeUseInfoMap": {
+                    "location": "akra"
+                },
+                "IAFXInstruction": {
+                    "location": "akra"
+                },
+                "IAFXSimpleInstruction": {
+                    "location": "akra"
+                },
+                "IAFXTypeInstruction": {
+                    "location": "akra"
+                },
+                "IAFXVariableTypeInstruction": {
+                    "location": "akra"
+                },
+                "IAFXTypedInstruction": {
+                    "location": "akra"
+                },
+                "IAFXDeclInstruction": {
+                    "location": "akra"
+                },
+                "IAFXTypeDeclInstruction": {
+                    "location": "akra"
+                },
+                "IAFXVariableDeclInstruction": {
+                    "location": "akra"
+                },
+                "IAFXFunctionDeclInstruction": {
+                    "location": "akra"
+                },
+                "IAFXStructDeclInstruction": {
+                    "location": "akra"
+                },
+                "IAFXIdInstruction": {
+                    "location": "akra"
+                },
+                "IAFXKeywordInstruction": {
+                    "location": "akra"
+                },
+                "IAFXAnalyzedInstruction": {
+                    "location": "akra"
+                },
+                "IAFXExprInstruction": {
+                    "location": "akra"
+                },
+                "IAFXInitExprInstruction": {
+                    "location": "akra"
+                },
+                "IAFXIdExprInstruction": {
+                    "location": "akra"
+                },
+                "IAFXLiteralInstruction": {
+                    "location": "akra"
+                },
+                "IAFXAnnotationInstruction": {
+                    "location": "akra"
+                },
+                "IAFXStmtInstruction": {
+                    "location": "akra"
+                },
+                "IAFXPassInstruction": {
+                    "location": "akra"
+                },
+                "IAFXTechniqueInstruction": {
+                    "location": "akra"
+                },
+                "IAFXComponentMap": {
+                    "location": "akra"
+                },
+                "IHardwareObject": {
+                    "location": "akra"
+                },
+                "PixelFormatList": {
+                    "location": "akra"
+                },
+                "IBuffer": {
+                    "location": "akra"
+                },
+                "IHardwareBuffer": {
+                    "location": "akra"
+                },
+                "EPixelFormats": {
+                    "location": "akra"
+                },
+                "IBox": {
+                    "location": "akra"
+                },
+                "IPixelBuffer": {
+                    "location": "akra"
+                },
+                "IImg": {
+                    "location": "akra"
+                },
+                "IAFXSamplerStateMap": {
+                    "location": "akra"
+                },
+                "IAFXSamplerStateListMap": {
+                    "location": "akra"
+                },
+                "IAFXSamplerState": {
+                    "location": "akra"
+                },
+                "IMaterial": {
+                    "location": "akra"
+                },
+                "IAFXPassInputBlend": {
+                    "location": "akra"
+                },
+                "IAFXComponentBlendMap": {
+                    "location": "akra"
+                },
+                "IAFXComponentPassInputBlend": {
+                    "location": "akra"
+                },
+                "IAFXComponentBlend": {
+                    "location": "akra"
+                },
+                "IDataMapper": {
+                    "location": "akra"
+                },
+                "IIndexData": {
+                    "location": "akra"
+                },
+                "IDataFlow": {
+                    "location": "akra"
+                },
+                "IColladaAsset": {
+                    "location": "akra"
+                },
+                "ICollada": {
+                    "location": "akra"
+                },
+                "IColladaCache": {
+                    "location": "akra"
+                },
+                "IColladaAnimationLoadOptions": {
+                    "location": "akra"
+                },
+                "IColladaImageLoadOptions": {
+                    "location": "akra"
+                },
+                "IColladaLoadOptions": {
+                    "location": "akra"
+                },
+                "IXMLExplorer": {
+                    "location": "akra"
+                },
+                "IColladaTarget": {
+                    "location": "akra"
+                },
+                "IColladaEntry": {
+                    "location": "akra"
+                },
+                "IColladaEntryMap": {
+                    "location": "akra"
+                },
+                "IColladaLibrary": {
+                    "location": "akra"
+                },
+                "IColladaEffectLibrary": {
+                    "location": "akra"
+                },
+                "IColladaEntryLoader": {
+                    "location": "akra"
+                },
+                "IColladaUnknownFormat": {
+                    "location": "akra"
+                },
+                "IColladaFormatStrideTable": {
+                    "location": "akra"
+                },
+                "IColladaConverter": {
+                    "location": "akra"
+                },
+                "IColladaConvertionTableRow": {
+                    "location": "akra"
+                },
+                "IColladaConvertionTable": {
+                    "location": "akra"
+                },
+                "IColladaLinkMap": {
+                    "location": "akra"
+                },
+                "IColladaLibraryMap": {
+                    "location": "akra"
+                },
+                "IColladaLibraryTemplate": {
+                    "location": "akra"
+                },
+                "IColladaArray": {
+                    "location": "akra"
+                },
+                "IColladaUnit": {
+                    "location": "akra"
+                },
+                "IColladaContributor": {
+                    "location": "akra"
+                },
+                "IColladaInstance": {
+                    "location": "akra"
+                },
+                "IColladaAnnotate": {
+                    "location": "akra"
+                },
+                "IColladaNewParam": {
+                    "location": "akra"
+                },
+                "IColladaNewParamMap": {
+                    "location": "akra"
+                },
+                "IColladaParam": {
+                    "location": "akra"
+                },
+                "IColladaAccessor": {
+                    "location": "akra"
+                },
+                "IColladaTechniqueCommon": {
+                    "location": "akra"
+                },
+                "IColladaSource": {
+                    "location": "akra"
+                },
+                "IColladaInput": {
+                    "location": "akra"
+                },
+                "IColladaTransform": {
+                    "location": "akra"
+                },
+                "IColladaRotate": {
+                    "location": "akra"
+                },
+                "IColladaTranslate": {
+                    "location": "akra"
+                },
+                "IColladaScale": {
+                    "location": "akra"
+                },
+                "IColladaMatrix": {
+                    "location": "akra"
+                },
+                "IColladaVertices": {
+                    "location": "akra"
+                },
+                "IColladaJoints": {
+                    "location": "akra"
+                },
+                "IColladaPolygons": {
+                    "location": "akra"
+                },
+                "IColladaMesh": {
+                    "location": "akra"
+                },
+                "IColladaConvexMesh": {
+                    "location": "akra"
+                },
+                "IColladaSpline": {
+                    "location": "akra"
+                },
+                "IColladaGeometrie": {
+                    "location": "akra"
+                },
+                "IColladaMorph": {
+                    "location": "akra"
+                },
+                "IColladaVertexWeights": {
+                    "location": "akra"
+                },
+                "IColladaSkin": {
+                    "location": "akra"
+                },
+                "IColladaController": {
+                    "location": "akra"
+                },
+                "IColladaImage": {
+                    "location": "akra"
+                },
+                "IColladaSurface": {
+                    "location": "akra"
+                },
+                "IColladaSampler2D": {
+                    "location": "akra"
+                },
+                "IColladaTexture": {
+                    "location": "akra"
+                },
+                "IColladaInstanceEffect": {
+                    "location": "akra"
+                },
+                "IColladaPhong": {
+                    "location": "akra"
+                },
+                "IColladaEffectTechnique": {
+                    "location": "akra"
+                },
+                "IColladaProfileCommon": {
+                    "location": "akra"
+                },
+                "IColladaEffect": {
+                    "location": "akra"
+                },
+                "IColladaMaterial": {
+                    "location": "akra"
+                },
+                "IColladaTechniqueValue": {
+                    "location": "akra"
+                },
+                "IColladaBindVertexInput": {
+                    "location": "akra"
+                },
+                "IColladaBindVertexInputMap": {
+                    "location": "akra"
+                },
+                "IColladaInstanceMaterial": {
+                    "location": "akra"
+                },
+                "IColladaBindMaterial": {
+                    "location": "akra"
+                },
+                "IColladaInstanceGeometry": {
+                    "location": "akra"
+                },
+                "IColladaInstanceController": {
+                    "location": "akra"
+                },
+                "IColladaNode": {
+                    "location": "akra"
+                },
+                "IColladaVisualScene": {
+                    "location": "akra"
+                },
+                "IColladaAnimationSampler": {
+                    "location": "akra"
+                },
+                "IColladaAnimationChannel": {
+                    "location": "akra"
+                },
+                "IColladaAnimation": {
+                    "location": "akra"
+                },
+                "IColladaScene": {
+                    "location": "akra"
+                },
+                "IColladaDocument": {
+                    "location": "akra"
+                },
+                "IColladaAnimationClip": {
+                    "location": "akra"
+                },
+                "IAnimationBase": {
+                    "location": "akra"
+                },
+                "IAnimationBaseController": {
+                    "location": "akra"
+                },
+                "IDataPool": {
+                    "location": "akra"
+                },
+                "IEventSlot": {
+                    "location": "akra"
+                },
+                "IEventSlotListMap": {
+                    "location": "akra"
+                },
+                "IEventSlotMap": {
+                    "location": "akra"
+                },
+                "IEventSlotTable": {
+                    "location": "akra"
+                },
+                "IEventSlotList": {
+                    "location": "akra"
+                },
+                "IMaterialBase": {
+                    "location": "akra"
+                },
+                "IFlexMaterial": {
+                    "location": "akra"
+                },
+                "IVertexElement": {
+                    "location": "akra"
+                },
+                "IVertexDeclaration": {
+                    "location": "akra"
+                },
+                "IVertexElementInterface": {
+                    "location": "akra"
+                },
+                "IColorIValue": {
+                    "location": "akra"
+                },
+                "IColorValue": {
+                    "location": "akra"
+                },
+                "IPixelBox": {
+                    "location": "akra"
+                },
+                "IPathinfo": {
+                    "location": "akra"
+                },
+                "IURI": {
+                    "location": "akra"
+                },
+                "ICanvasInfo": {
+                    "location": "akra"
+                },
+                "IBrowserInfo": {
+                    "location": "akra"
+                },
+                "IScreenInfo": {
+                    "location": "akra"
+                },
+                "IApiInfo": {
+                    "location": "akra"
+                },
+                "IVec2Constructor": {
+                    "location": "akra"
+                },
+                "IVec2": {
+                    "location": "akra"
+                },
+                "IMat4": {
+                    "location": "akra"
+                },
+                "IVec3Constructor": {
+                    "location": "akra"
+                },
+                "IVec3": {
+                    "location": "akra"
+                },
+                "IVec4": {
+                    "location": "akra"
+                },
+                "IMat3": {
+                    "location": "akra"
+                },
+                "IQuat4": {
+                    "location": "akra"
+                },
+                "IMat4Constructor": {
+                    "location": "akra"
+                },
+                "IMat3Constructor": {
+                    "location": "akra"
+                },
+                "IQuat4Constructor": {
+                    "location": "akra"
+                },
+                "IVec4Constructor": {
+                    "location": "akra"
+                },
+                "IPixelFormatDescription": {
+                    "location": "akra"
+                },
+                "IFileMeta": {
+                    "location": "akra"
+                },
+                "IFile": {
+                    "location": "akra"
+                },
+                "IThread": {
+                    "location": "akra"
+                },
+                "IThreadManager": {
+                    "location": "akra"
+                },
+                "ICodec": {
+                    "location": "akra"
+                },
+                "ICodecData": {
+                    "location": "akra"
+                },
+                "IImgCodec": {
+                    "location": "akra"
+                },
+                "IImgData": {
+                    "location": "akra"
+                },
+                "ICodecMap": {
+                    "location": "akra"
+                },
+                "IRenderDataType": {
+                    "location": "akra"
+                },
+                "IRenderData": {
+                    "location": "akra"
+                },
+                "IRect3d": {
+                    "location": "akra"
+                },
+                "ISphere": {
+                    "location": "akra"
+                },
+                "IMeshSubset": {
+                    "location": "akra"
+                },
+                "ISkin": {
+                    "location": "akra"
+                },
+                "IMeshMap": {
+                    "location": "akra"
+                },
+                "IAnimationFrame": {
+                    "location": "akra"
+                },
+                "IAnimationTrack": {
+                    "location": "akra"
+                },
+                "IExplorerFunc": {
+                    "location": "akra"
+                },
+                "IEntity": {
+                    "location": "akra"
+                },
+                "INodeMap": {
+                    "location": "akra"
+                },
+                "INode": {
+                    "location": "akra"
+                },
+                "ISceneNodeMap": {
+                    "location": "akra"
+                },
+                "IJointMap": {
+                    "location": "akra"
+                },
+                "IAnimationTarget": {
+                    "location": "akra"
+                },
+                "IAnimation": {
+                    "location": "akra"
+                },
+                "IAnimationElement": {
+                    "location": "akra"
+                },
+                "IAnimationBlend": {
+                    "location": "akra"
+                },
+                "IDepthBuffer": {
+                    "location": "akra"
+                },
+                "IFPSStat": {
+                    "location": "akra"
+                },
+                "ITimeStat": {
+                    "location": "akra"
+                },
+                "IFrameStats": {
+                    "location": "akra"
+                },
+                "IFrustum": {
+                    "location": "akra"
+                },
+                "ISceneBuilder": {
+                    "location": "akra"
+                },
+                "IObjectArray": {
+                    "location": "akra"
+                },
+                "IRenderTexture": {
+                    "location": "akra"
+                },
+                "IAFXObject": {
+                    "location": "akra"
+                },
+                "IAFXVariable": {
+                    "location": "akra"
+                },
+                "IAFXType": {
+                    "location": "akra"
+                },
+                "IAFXFunction": {
+                    "location": "akra"
+                },
+                "IAFXPass": {
+                    "location": "akra"
+                },
+                "IAFXTechnique": {
+                    "location": "akra"
+                },
+                "IAFXEffectStats": {
+                    "location": "akra"
+                },
+                "IAFXPreRenderState": {
+                    "location": "akra"
+                },
+                "IMat2": {
+                    "location": "akra"
+                },
+                "IShaderInput": {
+                    "location": "akra"
+                },
+                "IAFXMakerMap": {
+                    "location": "akra"
+                },
+                "IAFXMaker": {
+                    "location": "akra"
+                },
+                "IAFXPassBlendMap": {
+                    "location": "akra"
+                },
+                "IAFXPassBlend": {
+                    "location": "akra"
+                },
+                "IRenderPass": {
+                    "location": "akra"
+                },
+                "IRenderTechnique": {
+                    "location": "akra"
+                },
+                "IRect2d": {
+                    "location": "akra"
+                },
+                "IBufferData": {
+                    "location": "akra"
+                },
+                "IBufferDataModifier": {
+                    "location": "akra"
+                },
+                "ICanvas": {
+                    "location": "akra"
+                },
+                "ICircle": {
+                    "location": "akra"
+                },
+                "IDSViewport": {
+                    "location": "akra"
+                },
+                "IOmniLight": {
+                    "location": "akra"
+                },
+                "IProjectLight": {
+                    "location": "akra"
+                },
+                "IPlane3d": {
+                    "location": "akra"
+                },
+                "IPlane2d": {
+                    "location": "akra"
+                },
+                "IRect3": {
+                    "location": "akra"
+                },
+                "IOcTreeNode": {
+                    "location": "akra"
+                },
+                "IOcTreeRect": {
+                    "location": "akra"
+                },
+                "IOcTree": {
+                    "location": "akra"
+                },
+                "IObjectList": {
+                    "location": "akra"
+                },
+                "IListExplorerFunc": {
+                    "location": "akra"
+                },
+                "IRay2d": {
+                    "location": "akra"
+                },
+                "IRay3d": {
+                    "location": "akra"
+                },
+                "ILightGraph": {
+                    "location": "akra"
+                },
+                "ISegment2d": {
+                    "location": "akra"
+                },
+                "ISegment3d": {
+                    "location": "akra"
+                },
+                "IImageMap": {
+                    "location": "akra"
+                },
+                "ITerrainSampleData": {
+                    "location": "akra"
+                },
+                "IMegaTexture": {
+                    "location": "akra"
+                },
+                "IRPCCallback": {
+                    "location": "akra"
+                },
+                "IRPCPacket": {
+                    "location": "akra"
+                },
+                "IRPCRequest": {
+                    "location": "akra"
+                },
+                "IRPCResponse": {
+                    "location": "akra"
+                },
+                "IRPC": {
+                    "location": "akra"
+                },
+                "IPipe": {
+                    "location": "akra"
+                },
+                "ITerrainSystem": {
+                    "location": "akra"
+                },
+                "ITriTreeNode": {
+                    "location": "akra"
+                },
+                "ITriangleNodePool": {
+                    "location": "akra"
+                },
+                "IAFXBlender": {
+                    "location": "akra"
+                },
+                "IDDSCodec": {
+                    "location": "akra"
+                },
+                "IDepsManager": {
+                    "location": "akra"
+                },
+                "IPoint": {
+                    "location": "akra"
+                },
+                "IOffset": {
+                    "location": "akra"
+                },
+                "IKeyMap": {
+                    "location": "akra"
+                },
+                "IUIHTMLNode": {
+                    "location": "akra"
+                },
+                "IUIDNDNode": {
+                    "location": "akra"
+                },
+                "IUIComponentOptions": {
+                    "location": "akra"
+                },
+                "IUILayoutAttributes": {
+                    "location": "akra"
+                },
+                "IUILayout": {
+                    "location": "akra"
+                },
+                "IUINode": {
+                    "location": "akra"
+                },
+                "IUIEvent": {
+                    "location": "akra"
+                },
+                "IUIComponentType": {
+                    "location": "akra"
+                },
+                "IUIComponent": {
+                    "location": "akra"
+                },
+                "IAjaxStatusCodeCallback": {
+                    "location": "akra"
+                },
+                "IAjaxStatusCodeMap": {
+                    "location": "akra"
+                },
+                "IAjaxErrorCallback": {
+                    "location": "akra"
+                },
+                "IAjaxSuccessCallback": {
+                    "location": "akra"
+                },
+                "IAjaxBeforeSendCallback": {
+                    "location": "akra"
+                },
+                "IAjaxParams": {
+                    "location": "akra"
+                },
+                "IAjaxResultSync": {
+                    "location": "akra"
+                },
+                "IUIPanelOptions": {
+                    "location": "akra"
+                },
+                "IUIPanel": {
+                    "location": "akra"
+                },
+                "IUITabs": {
+                    "location": "akra"
+                },
+                "IUIButtonOptions": {
+                    "location": "akra"
+                },
+                "IUIButton": {
+                    "location": "akra"
+                },
+                "IUISwitch": {
+                    "location": "akra"
+                },
+                "IUILabelOptions": {
+                    "location": "akra"
+                },
+                "IUILabel": {
+                    "location": "akra"
+                },
+                "IUIVector": {
+                    "location": "akra"
+                },
+                "IUISlider": {
+                    "location": "akra"
+                },
+                "IUICheckboxOptions": {
+                    "location": "akra"
+                },
+                "IUICheckbox": {
+                    "location": "akra"
+                },
+                "IUICheckboxList": {
+                    "location": "akra"
+                },
+                "IUIWindowOptions": {
+                    "location": "akra"
+                },
+                "IUIWindow": {
+                    "location": "akra"
+                },
+                "IUIRenderTargetStats": {
+                    "location": "akra"
+                },
+                "IUITreeNode": {
+                    "location": "akra"
+                },
+                "IUITree": {
+                    "location": "akra"
+                },
+                "IUIGraph": {
+                    "location": "akra"
+                },
+                "IUIGraphRoute": {
+                    "location": "akra"
+                },
+                "IUIGraphConnectionArea": {
+                    "location": "akra"
+                },
+                "IGraphNodeAreaMap": {
+                    "location": "akra"
+                },
+                "IUIGraphNode": {
+                    "location": "akra"
+                },
+                "IUIGraphControls": {
+                    "location": "akra"
+                },
+                "IUIAnimationGraph": {
+                    "location": "akra"
+                },
+                "IUIAnimationControls": {
+                    "location": "akra"
+                },
+                "RaphaelPaper": {
+                    "location": "akra"
+                },
+                "IUIGraphConnector": {
+                    "location": "akra"
+                },
+                "IUIGraphEvent": {
+                    "location": "akra"
+                },
+                "IUIAnimationNode": {
+                    "location": "akra"
+                },
+                "IUIlabel": {
+                    "location": "akra"
+                },
+                "IUIAnimationData": {
+                    "location": "akra"
+                },
+                "IUIConnectionAreaOptions": {
+                    "location": "akra"
+                },
+                "RaphaelPath": {
+                    "location": "akra"
+                },
+                "IUITempGraphRoute": {
+                    "location": "akra"
+                },
+                "IAnimationContainer": {
+                    "location": "akra"
+                },
+                "IUIAnimationPlayer": {
+                    "location": "akra"
+                },
+                "IUIAnimationMask": {
+                    "location": "akra"
+                },
+                "IUIAnimationBlender": {
+                    "location": "akra"
+                }
+            },
             "variables": {
                 "DEBUG": {
                     "location": "akra"
                 },
                 "logger": {
-                    "location": "akra"
-                },
-                "typeOf": {
-                    "location": "akra"
-                },
-                "isDef": {
-                    "location": "akra"
-                },
-                "isEmpty": {
-                    "location": "akra"
-                },
-                "isDefAndNotNull": {
-                    "location": "akra"
-                },
-                "isNull": {
-                    "location": "akra"
-                },
-                "isBoolean": {
-                    "location": "akra"
-                },
-                "isString": {
-                    "location": "akra"
-                },
-                "isNumber": {
-                    "location": "akra"
-                },
-                "isFloat": {
-                    "location": "akra"
-                },
-                "isInt": {
-                    "location": "akra"
-                },
-                "isFunction": {
-                    "location": "akra"
-                },
-                "isObject": {
-                    "location": "akra"
-                },
-                "isArrayBuffer": {
-                    "location": "akra"
-                },
-                "isTypedArray": {
-                    "location": "akra"
-                },
-                "isBlob": {
-                    "location": "akra"
-                },
-                "isArray": {
                     "location": "akra"
                 },
                 "INVALID_INDEX": {
@@ -153,10 +1307,7 @@
                 "DEFAULT_MATERIAL_NAME": {
                     "location": "akra"
                 },
-                "sid": {
-                    "location": "akra"
-                },
-                "createEngine": {
+                "_total": {
                     "location": "akra"
                 },
                 "DeclarationUsages": {
@@ -164,73 +1315,58 @@
                 },
                 "DeclUsages": {
                     "location": "akra"
-                },
-                "VertexElement": {
-                    "location": "akra"
-                },
-                "VertexDeclaration": {
-                    "location": "akra"
-                },
-                "createVertexDeclaration": {
-                    "location": "akra"
-                },
-                "Color": {
-                    "location": "akra"
-                },
-                "Material": {
-                    "location": "akra"
-                },
-                "Pathinfo": {
-                    "location": "akra"
-                },
-                "Vec2": {
-                    "location": "akra"
-                },
-                "Vec3": {
-                    "location": "akra"
-                },
-                "Vec4": {
-                    "location": "akra"
-                },
-                "Mat3": {
-                    "location": "akra"
-                },
-                "Mat4": {
-                    "location": "akra"
-                },
-                "Quat4": {
-                    "location": "akra"
-                },
-                "vec2": {
-                    "location": "akra"
-                },
-                "vec3": {
-                    "location": "akra"
-                },
-                "vec4": {
-                    "location": "akra"
-                },
-                "quat4": {
-                    "location": "akra"
-                },
-                "mat3": {
-                    "location": "akra"
-                },
-                "mat4": {
-                    "location": "akra"
-                },
-                "ObjectArray": {
-                    "location": "akra"
-                },
-                "ObjectList": {
-                    "location": "akra"
                 }
             },
             "functions": {
+                "null": {
+                    "location": "akra"
+                },
+                "isDef": {
+                    "location": "akra"
+                },
+                "isEmpty": {
+                    "location": "akra"
+                },
+                "isDefAndNotNull": {
+                    "location": "akra"
+                },
+                "isNull": {
+                    "location": "akra"
+                },
+                "isBoolean": {
+                    "location": "akra"
+                },
+                "isString": {
+                    "location": "akra"
+                },
+                "isNumber": {
+                    "location": "akra"
+                },
+                "isFunction": {
+                    "location": "akra"
+                },
+                "isObject": {
+                    "location": "akra"
+                },
+                "isArrayBuffer": {
+                    "location": "akra"
+                },
+                "isTypedArray": {
+                    "location": "akra"
+                },
+                "isBlob": {
+                    "location": "akra"
+                },
+                "isArray": {
+                    "location": "akra"
+                },
                 "genArray": {
                     "location": "akra"
                 },
                 "getTypeSize": {
+                    "location": "akra"
+                },
+                "sid": {
                     "location": "akra"
                 },
                 "now": {
@@ -275,6 +1411,27 @@
                 "VE_END": {
                     "location": "akra"
                 },
+                "createVertexDeclaration": {
+                    "location": "akra"
+                },
+                "vec2": {
+                    "location": "akra"
+                },
+                "vec3": {
+                    "location": "akra"
+                },
+                "vec4": {
+                    "location": "akra"
+                },
+                "quat4": {
+                    "location": "akra"
+                },
+                "mat3": {
+                    "location": "akra"
+                },
+                "mat4": {
+                    "location": "akra"
+                },
                 "createSingleStripGrid": {
                     "location": "akra"
                 },
@@ -288,7 +1445,7 @@
                 },
                 "bf": {
                     "location": "akra",
-                    "variables": {
+                    "functions": {
                         "flag": {
                             "location": "akra.bf"
                         },
@@ -305,9 +1462,6 @@
                             "location": "akra.bf"
                         },
                         "clearBit": {
-                            "location": "akra.bf"
-                        },
-                        "setAll": {
                             "location": "akra.bf"
                         },
                         "clearAll": {
@@ -342,9 +1496,7 @@
                         },
                         "totalSet": {
                             "location": "akra.bf"
-                        }
-                    },
-                    "functions": {
+                        },
                         "fixedToFixed": {
                             "location": "akra.bf"
                         },
@@ -372,10 +1524,83 @@
                         "halfToFloatI": {
                             "location": "akra.bf"
                         }
+                    },
+                    "variables": {
+                        "setAll": {
+                            "location": "akra.bf"
+                        }
                     }
                 },
                 "util": {
                     "location": "akra",
+                    "interfaces": {
+                        "ILogRoutineMap": {
+                            "location": "akra.util"
+                        },
+                        "ICodeFamily": {
+                            "location": "akra.util"
+                        },
+                        "ICodeFamilyMap": {
+                            "location": "akra.util"
+                        },
+                        "ICodeInfo": {
+                            "location": "akra.util"
+                        },
+                        "ICodeInfoMap": {
+                            "location": "akra.util"
+                        },
+                        "ICodeFamilyRoutineDMap": {
+                            "location": "akra.util"
+                        },
+                        "IBrowserData": {
+                            "location": "akra.util"
+                        },
+                        "IThreadStats": {
+                            "location": "akra.util"
+                        },
+                        "IOperation": {
+                            "location": "akra.util"
+                        },
+                        "IItem": {
+                            "location": "akra.util"
+                        },
+                        "IState": {
+                            "location": "akra.util"
+                        },
+                        "IStateMap": {
+                            "location": "akra.util"
+                        },
+                        "IOperationMap": {
+                            "location": "akra.util"
+                        },
+                        "IOperationDMap": {
+                            "location": "akra.util"
+                        },
+                        "IRuleMap": {
+                            "location": "akra.util"
+                        },
+                        "IRuleDMap": {
+                            "location": "akra.util"
+                        },
+                        "IRuleFunctionMap": {
+                            "location": "akra.util"
+                        },
+                        "IRuleFunctionDMap": {
+                            "location": "akra.util"
+                        },
+                        "IAdditionalFuncInfo": {
+                            "location": "akra.util"
+                        },
+                        "IObjectListItem": {
+                            "location": "akra.util"
+                        },
+                        "IBuffersCompatibleMap": {
+                            "location": "akra.util"
+                        },
+                        "ISemanticsMap": {
+                            "location": "akra.util"
+                        }
+                    },
                     "classes": {
                         "Logger": {
                             "location": "akra.util",
@@ -2011,8 +3236,16 @@
                     "variables": {
                         "logger": {
                             "location": "akra.util"
+                        }
+                    },
+                    "functions": {
+                        "randomColor": {
+                            "location": "akra.util"
                         },
-                        "pathinfo": {
+                        "colorToVec4": {
+                            "location": "akra.util"
+                        },
+                        "null": {
                             "location": "akra.util"
                         },
                         "uri": {
@@ -2022,17 +3255,6 @@
                             "location": "akra.util"
                         },
                         "abtos": {
-                            "location": "akra.util"
-                        },
-                        "parser": {
-                            "location": "akra.util"
-                        }
-                    },
-                    "functions": {
-                        "randomColor": {
-                            "location": "akra.util"
-                        },
-                        "colorToVec4": {
                             "location": "akra.util"
                         },
                         "abtota": {
@@ -2045,6 +3267,9 @@
                             "location": "akra.util"
                         },
                         "parseHTML": {
+                            "location": "akra.util"
+                        },
+                        "EffectParser": {
                             "location": "akra.util"
                         },
                         "initAFXParser": {
@@ -2289,9 +3514,6 @@
                                         "bInitialized": {
                                             "location": "akra.core.pool.DataPool"
                                         },
-                                        "pGroupList": {
-                                            "location": "akra.core.pool.DataPool"
-                                        },
                                         "iTotalMembers": {
                                             "location": "akra.core.pool.DataPool"
                                         },
@@ -2309,6 +3531,9 @@
                                         }
                                     },
                                     "functions": {
+                                        "PoolGroup": {
+                                            "location": "akra.core.pool.DataPool"
+                                        },
                                         "initialize": {
                                             "location": "akra.core.pool.DataPool"
                                         },
@@ -2612,14 +3837,14 @@
                                         "pWaiterResource": {
                                             "location": "akra.core.pool.ResourcePoolManager"
                                         },
-                                        "pEngine": {
-                                            "location": "akra.core.pool.ResourcePoolManager"
-                                        },
                                         "pTypedResourseTotal": {
                                             "location": "akra.core.pool.ResourcePoolManager"
                                         }
                                     },
                                     "functions": {
+                                        "Engine": {
+                                            "location": "akra.core.pool.ResourcePoolManager"
+                                        },
                                         "initialize": {
                                             "location": "akra.core.pool.ResourcePoolManager"
                                         },
@@ -2744,6 +3969,14 @@
                                             "location": "akra.core.pool.ResourcePoolManager"
                                         }
                                     }
+                                }
+                            },
+                            "interfaces": {
+                                "IGroupNumber": {
+                                    "location": "akra.core.pool"
+                                },
+                                "ICallbackSlot": {
+                                    "location": "akra.core.pool"
                                 }
                             },
                             "modules": {
@@ -3424,9 +4657,6 @@
                                                 "_iLockSize": {
                                                     "location": "akra.core.pool.resources.HardwareBuffer"
                                                 },
-                                                "_pBackupCopy": {
-                                                    "location": "akra.core.pool.resources.HardwareBuffer"
-                                                },
                                                 "_pBackupUpdated": {
                                                     "location": "akra.core.pool.resources.HardwareBuffer"
                                                 },
@@ -3441,6 +4671,9 @@
                                                 }
                                             },
                                             "functions": {
+                                                "HardwareBuffer": {
+                                                    "location": "akra.core.pool.resources.HardwareBuffer"
+                                                },
                                                 "isValid": {
                                                     "location": "akra.core.pool.resources.HardwareBuffer"
                                                 },
@@ -4158,9 +5391,6 @@
                                 "_iLength": {
                                     "location": "akra.data.VertexData"
                                 },
-                                "_pVertexDeclaration": {
-                                    "location": "akra.data.VertexData"
-                                },
                                 "_iId": {
                                     "location": "akra.data.VertexData"
                                 },
@@ -4178,6 +5408,9 @@
                                 }
                             },
                             "functions": {
+                                "VertexDeclaration": {
+                                    "location": "akra.data.VertexData"
+                                },
                                 "getVertexDeclaration": {
                                     "location": "akra.data.VertexData"
                                 },
@@ -4357,9 +5590,6 @@
                                 },
                                 "stackPosition": {
                                     "location": "akra.math.Vec2"
-                                },
-                                "stack": {
-                                    "location": "akra.math.Vec2"
                                 }
                             },
                             "functions": {
@@ -4404,6 +5634,9 @@
                                 },
                                 "mix": {
                                     "location": "akra.math.Vec2"
+                                },
+                                "Vec2": {
+                                    "location": "akra.math.Vec2"
                                 }
                             }
                         },
@@ -4423,9 +5656,6 @@
                                     "location": "akra.math.Vec3"
                                 },
                                 "stackPosition": {
-                                    "location": "akra.math.Vec3"
-                                },
-                                "stack": {
                                     "location": "akra.math.Vec3"
                                 }
                             },
@@ -4480,6 +5710,9 @@
                                 },
                                 "vec3TransformCoord": {
                                     "location": "akra.math.Vec3"
+                                },
+                                "Vec3": {
+                                    "location": "akra.math.Vec3"
                                 }
                             }
                         },
@@ -4502,9 +5735,6 @@
                                     "location": "akra.math.Vec4"
                                 },
                                 "stackPosition": {
-                                    "location": "akra.math.Vec4"
-                                },
-                                "stack": {
                                     "location": "akra.math.Vec4"
                                 }
                             },
@@ -4550,6 +5780,9 @@
                                 },
                                 "mix": {
                                     "location": "akra.math.Vec4"
+                                },
+                                "Vec4": {
+                                    "location": "akra.math.Vec4"
                                 }
                             }
                         },
@@ -4563,9 +5796,6 @@
                                     "location": "akra.math.Mat3"
                                 },
                                 "stackPosition": {
-                                    "location": "akra.math.Mat3"
-                                },
-                                "stack": {
                                     "location": "akra.math.Mat3"
                                 }
                             },
@@ -4623,6 +5853,9 @@
                                 },
                                 "fromXYZ": {
                                     "location": "akra.math.Mat3"
+                                },
+                                "Mat3": {
+                                    "location": "akra.math.Mat3"
                                 }
                             }
                         },
@@ -4636,9 +5869,6 @@
                                     "location": "akra.math.Mat4"
                                 },
                                 "stackPosition": {
-                                    "location": "akra.math.Mat4"
-                                },
-                                "stack": {
                                     "location": "akra.math.Mat4"
                                 }
                             },
@@ -4753,6 +5983,9 @@
                                 },
                                 "lookAt": {
                                     "location": "akra.math.Mat4"
+                                },
+                                "Mat4": {
+                                    "location": "akra.math.Mat4"
                                 }
                             }
                         },
@@ -4775,9 +6008,6 @@
                                     "location": "akra.math.Quat4"
                                 },
                                 "stackPosition": {
-                                    "location": "akra.math.Quat4"
-                                },
-                                "stack": {
                                     "location": "akra.math.Quat4"
                                 }
                             },
@@ -4843,6 +6073,9 @@
                                     "location": "akra.math.Quat4"
                                 },
                                 "fromXYZ": {
+                                    "location": "akra.math.Quat4"
+                                },
+                                "Quat4": {
                                     "location": "akra.math.Quat4"
                                 }
                             }
@@ -4969,6 +6202,11 @@
                         "GRAVITY_CONSTANT": {
                             "location": "akra.math"
                         },
+                        "fpOneBits": {
+                            "location": "akra.math"
+                        }
+                    },
+                    "functions": {
                         "abs": {
                             "location": "akra.math"
                         },
@@ -5044,16 +6282,7 @@
                         "fpMantissa": {
                             "location": "akra.math"
                         },
-                        "fpOneBits": {
-                            "location": "akra.math"
-                        },
                         "flipSign": {
-                            "location": "akra.math"
-                        },
-                        "absoluteValue": {
-                            "location": "akra.math"
-                        },
-                        "raiseToPower": {
                             "location": "akra.math"
                         },
                         "isPositive": {
@@ -5104,9 +6333,6 @@
                         "modulus": {
                             "location": "akra.math"
                         },
-                        "mod": {
-                            "location": "akra.math"
-                        },
                         "alignUp": {
                             "location": "akra.math"
                         },
@@ -5137,17 +6363,9 @@
                         "nok": {
                             "location": "akra.math"
                         },
-                        "gcd": {
-                            "location": "akra.math"
-                        },
-                        "lcm": {
-                            "location": "akra.math"
-                        },
                         "isRealEqual": {
                             "location": "akra.math"
-                        }
-                    },
-                    "functions": {
+                        },
                         "calcPOTtextureSize": {
                             "location": "akra.math"
                         },
@@ -5450,9 +6668,6 @@
                                 },
                                 "stackPosition": {
                                     "location": "akra.geometry.Rect3d"
-                                },
-                                "stack": {
-                                    "location": "akra.geometry.Rect3d"
                                 }
                             },
                             "functions": {
@@ -5595,6 +6810,9 @@
                                     "location": "akra.geometry.Rect3d"
                                 },
                                 "createBoundingSphere": {
+                                    "location": "akra.geometry.Rect3d"
+                                },
+                                "Rect3d": {
                                     "location": "akra.geometry.Rect3d"
                                 }
                             }
@@ -6071,13 +7289,13 @@
                         },
                         "pSupportedExtensionList": {
                             "location": "akra.webgl"
-                        },
-                        "isEnabled": {
-                            "location": "akra.webgl"
                         }
                     },
                     "functions": {
                         "loadExtension": {
+                            "location": "akra.webgl"
+                        },
+                        "isEnabled": {
                             "location": "akra.webgl"
                         },
                         "createContext": {
@@ -6278,33 +7496,10 @@
                         },
                         "WebGLShaderProgram": {
                             "location": "akra.webgl",
-                            "variables": {
-                                "_pWebGLRenderer": {
-                                    "location": "akra.webgl.WebGLShaderProgram"
-                                },
-                                "_pWebGLContext": {
-                                    "location": "akra.webgl.WebGLShaderProgram"
-                                },
-                                "_pWebGLProgram": {
-                                    "location": "akra.webgl.WebGLShaderProgram"
-                                },
-                                "_pWebGLUniformLocations": {
-                                    "location": "akra.webgl.WebGLShaderProgram"
-                                },
-                                "_pWebGLAttributeLocations": {
-                                    "location": "akra.webgl.WebGLShaderProgram"
-                                },
-                                "_pWebGLAttributesInfo": {
-                                    "location": "akra.webgl.WebGLShaderProgram"
-                                },
-                                "_iTotalAttributes": {
-                                    "location": "akra.webgl.WebGLShaderProgram"
-                                },
-                                "uniformBuffer": {
-                                    "location": "akra.webgl.WebGLShaderProgram"
-                                }
-                            },
                             "functions": {
+                                "WebGLRenderer": {
+                                    "location": "akra.webgl.WebGLShaderProgram"
+                                },
                                 "create": {
                                     "location": "akra.webgl.WebGLShaderProgram"
                                 },
@@ -6435,6 +7630,29 @@
                                     "location": "akra.webgl.WebGLShaderProgram"
                                 },
                                 "obtainWebGLAttributes": {
+                                    "location": "akra.webgl.WebGLShaderProgram"
+                                }
+                            },
+                            "variables": {
+                                "_pWebGLContext": {
+                                    "location": "akra.webgl.WebGLShaderProgram"
+                                },
+                                "_pWebGLProgram": {
+                                    "location": "akra.webgl.WebGLShaderProgram"
+                                },
+                                "_pWebGLUniformLocations": {
+                                    "location": "akra.webgl.WebGLShaderProgram"
+                                },
+                                "_pWebGLAttributeLocations": {
+                                    "location": "akra.webgl.WebGLShaderProgram"
+                                },
+                                "_pWebGLAttributesInfo": {
+                                    "location": "akra.webgl.WebGLShaderProgram"
+                                },
+                                "_iTotalAttributes": {
+                                    "location": "akra.webgl.WebGLShaderProgram"
+                                },
+                                "uniformBuffer": {
                                     "location": "akra.webgl.WebGLShaderProgram"
                                 }
                             }
@@ -6653,15 +7871,10 @@
                         },
                         "WebGLInternalTexture": {
                             "location": "akra.webgl",
-                            "variables": {
-                                "_pSurfaceList": {
+                            "functions": {
+                                "WebGLTextureBuffer": {
                                     "location": "akra.webgl.WebGLInternalTexture"
                                 },
-                                "_pWebGLTexture": {
-                                    "location": "akra.webgl.WebGLInternalTexture"
-                                }
-                            },
-                            "functions": {
                                 "getWebGLTexture": {
                                     "location": "akra.webgl.WebGLInternalTexture"
                                 },
@@ -6702,6 +7915,11 @@
                                     "location": "akra.webgl.WebGLInternalTexture"
                                 },
                                 "createRenderTexture": {
+                                    "location": "akra.webgl.WebGLInternalTexture"
+                                }
+                            },
+                            "variables": {
+                                "_pWebGLTexture": {
                                     "location": "akra.webgl.WebGLInternalTexture"
                                 }
                             }
@@ -6889,12 +8107,10 @@
                         },
                         "WebGLRenderTexture": {
                             "location": "akra.webgl",
-                            "variables": {
-                                "_pFrameBuffer": {
-                                    "location": "akra.webgl.WebGLRenderTexture"
-                                }
-                            },
                             "functions": {
+                                "WebGLInternalFrameBuffer": {
+                                    "location": "akra.webgl.WebGLRenderTexture"
+                                },
                                 "destroy": {
                                     "location": "akra.webgl.WebGLRenderTexture"
                                 },
@@ -6929,21 +8145,10 @@
                         },
                         "WebGLInternalFrameBuffer": {
                             "location": "akra.webgl",
-                            "variables": {
-                                "_pWebGLRenderer": {
-                                    "location": "akra.webgl.WebGLInternalFrameBuffer"
-                                },
-                                "_pWebGLFramebuffer": {
-                                    "location": "akra.webgl.WebGLInternalFrameBuffer"
-                                },
-                                "_pAttachments": {
-                                    "location": "akra.webgl.WebGLInternalFrameBuffer"
-                                },
-                                "_iWebglActiveAttachment": {
-                                    "location": "akra.webgl.WebGLInternalFrameBuffer"
-                                }
-                            },
                             "functions": {
+                                "WebGLRenderer": {
+                                    "location": "akra.webgl.WebGLInternalFrameBuffer"
+                                },
                                 "destroy": {
                                     "location": "akra.webgl.WebGLInternalFrameBuffer"
                                 },
@@ -6986,19 +8191,25 @@
                                 "releaseAttachment": {
                                     "location": "akra.webgl.WebGLInternalFrameBuffer"
                                 }
+                            },
+                            "variables": {
+                                "_pWebGLFramebuffer": {
+                                    "location": "akra.webgl.WebGLInternalFrameBuffer"
+                                },
+                                "_pAttachments": {
+                                    "location": "akra.webgl.WebGLInternalFrameBuffer"
+                                },
+                                "_iWebglActiveAttachment": {
+                                    "location": "akra.webgl.WebGLInternalFrameBuffer"
+                                }
                             }
                         },
                         "WebGLDepthBuffer": {
                             "location": "akra.webgl",
-                            "variables": {
-                                "_pDepthBuffer": {
+                            "functions": {
+                                "WebGLInternalRenderBuffer": {
                                     "location": "akra.webgl.WebGLDepthBuffer"
                                 },
-                                "_pStencilBuffer": {
-                                    "location": "akra.webgl.WebGLDepthBuffer"
-                                }
-                            },
-                            "functions": {
                                 "create": {
                                     "location": "akra.webgl.WebGLDepthBuffer"
                                 },
@@ -7009,6 +8220,14 @@
                                     "location": "akra.webgl.WebGLDepthBuffer"
                                 }
                             }
+                        }
+                    },
+                    "interfaces": {
+                        "WebGLUniformLocationMap": {
+                            "location": "akra.webgl"
+                        },
+                        "IWebGLAttachments": {
+                            "location": "akra.webgl"
                         }
                     }
                 },
@@ -7036,17 +8255,43 @@
                 },
                 "io": {
                     "location": "akra",
-                    "variables": {
+                    "interfaces": {
+                        "IFileCommand": {
+                            "location": "akra.io"
+                        }
+                    },
+                    "functions": {
                         "getLocalFileThreadManager": {
                             "location": "akra.io"
                         },
                         "getRemoteFileThreadManager": {
                             "location": "akra.io"
                         },
-                        "fopen": {
+                        "getFileSystem": {
                             "location": "akra.io"
                         },
-                        "ajax": {
+                        "filemode": {
+                            "location": "akra.io"
+                        },
+                        "_fopen": {
+                            "location": "akra.io"
+                        },
+                        "stringToHttpMethod": {
+                            "location": "akra.io"
+                        },
+                        "stringToAjaxDataType": {
+                            "location": "akra.io"
+                        },
+                        "ajaxDataTypeToXHRResponseType": {
+                            "location": "akra.io"
+                        },
+                        "createXMLHttpRequest": {
+                            "location": "akra.io"
+                        },
+                        "queryString": {
+                            "location": "akra.io"
+                        },
+                        "_ajax": {
                             "location": "akra.io"
                         }
                     },
@@ -7249,29 +8494,6 @@
                                     "location": "akra.io.StorageFile"
                                 }
                             }
-                        }
-                    },
-                    "functions": {
-                        "getFileSystem": {
-                            "location": "akra.io"
-                        },
-                        "filemode": {
-                            "location": "akra.io"
-                        },
-                        "stringToHttpMethod": {
-                            "location": "akra.io"
-                        },
-                        "stringToAjaxDataType": {
-                            "location": "akra.io"
-                        },
-                        "ajaxDataTypeToXHRResponseType": {
-                            "location": "akra.io"
-                        },
-                        "createXMLHttpRequest": {
-                            "location": "akra.io"
-                        },
-                        "queryString": {
-                            "location": "akra.io"
                         }
                     }
                 },
@@ -8075,14 +9297,14 @@
                                         "_pLastViewport": {
                                             "location": "akra.scene.objects.Camera"
                                         },
-                                        "_pDLTechniques": {
-                                            "location": "akra.scene.objects.Camera"
-                                        },
                                         "_pDLResultStorage": {
                                             "location": "akra.scene.objects.Camera"
                                         }
                                     },
                                     "functions": {
+                                        "DLTechnique": {
+                                            "location": "akra.scene.objects.Camera"
+                                        },
                                         "create": {
                                             "location": "akra.scene.objects.Camera"
                                         },
@@ -8588,9 +9810,6 @@
                                 },
                                 "stackPosition": {
                                     "location": "akra.animation.Frame"
-                                },
-                                "stack": {
-                                    "location": "akra.animation.Frame"
                                 }
                             },
                             "functions": {
@@ -8625,6 +9844,9 @@
                                     "location": "akra.animation.Frame"
                                 },
                                 "interpolateMatrix": {
+                                    "location": "akra.animation.Frame"
+                                },
+                                "Frame": {
                                     "location": "akra.animation.Frame"
                                 }
                             }
@@ -8979,6 +10201,11 @@
                         "createContainer": {
                             "location": "akra.animation"
                         }
+                    },
+                    "interfaces": {
+                        "IAnimationTargetMap": {
+                            "location": "akra.animation"
+                        }
                     }
                 },
                 "fx": {
@@ -9068,24 +10295,6 @@
                                 "_pFlowsBySemanticMap": {
                                     "location": "akra.fx.AttributeBlendContainer"
                                 },
-                                "_pFlowBySlots": {
-                                    "location": "akra.fx.AttributeBlendContainer"
-                                },
-                                "_pHashBySlots": {
-                                    "location": "akra.fx.AttributeBlendContainer"
-                                },
-                                "_pTypesBySlots": {
-                                    "location": "akra.fx.AttributeBlendContainer"
-                                },
-                                "_pVBByBufferSlots": {
-                                    "location": "akra.fx.AttributeBlendContainer"
-                                },
-                                "_pHashByBufferSlots": {
-                                    "location": "akra.fx.AttributeBlendContainer"
-                                },
-                                "_pBufferSlotBySlots": {
-                                    "location": "akra.fx.AttributeBlendContainer"
-                                },
                                 "_pOffsetVarsBySemanticMap": {
                                     "location": "akra.fx.AttributeBlendContainer"
                                 },
@@ -9097,6 +10306,9 @@
                                 }
                             },
                             "functions": {
+                                "ObjectArray": {
+                                    "location": "akra.fx.AttributeBlendContainer"
+                                },
                                 "getOffsetVarsBySemantic": {
                                     "location": "akra.fx.AttributeBlendContainer"
                                 },
@@ -9155,21 +10367,10 @@
                         },
                         "SamplerBlender": {
                             "location": "akra.fx",
-                            "variables": {
-                                "_pSlotList": {
-                                    "location": "akra.fx.SamplerBlender"
-                                },
-                                "_nActiveSlots": {
-                                    "location": "akra.fx.SamplerBlender"
-                                },
-                                "_pIdToSlotMap": {
-                                    "location": "akra.fx.SamplerBlender"
-                                },
-                                "_pIdList": {
-                                    "location": "akra.fx.SamplerBlender"
-                                }
-                            },
                             "functions": {
+                                "ObjectArray": {
+                                    "location": "akra.fx.SamplerBlender"
+                                },
                                 "getSamplersBySlot": {
                                     "location": "akra.fx.SamplerBlender"
                                 },
@@ -9186,6 +10387,17 @@
                                     "location": "akra.fx.SamplerBlender"
                                 },
                                 "getHash": {
+                                    "location": "akra.fx.SamplerBlender"
+                                }
+                            },
+                            "variables": {
+                                "_nActiveSlots": {
+                                    "location": "akra.fx.SamplerBlender"
+                                },
+                                "_pIdToSlotMap": {
+                                    "location": "akra.fx.SamplerBlender"
+                                },
+                                "_pIdList": {
                                     "location": "akra.fx.SamplerBlender"
                                 }
                             }
@@ -11060,15 +12272,10 @@
                         },
                         "SystemCallInstruction": {
                             "location": "akra.fx",
-                            "variables": {
-                                "_pSystemFunction": {
+                            "functions": {
+                                "SystemFunctionInstruction": {
                                     "location": "akra.fx.SystemCallInstruction"
                                 },
-                                "_pSamplerDecl": {
-                                    "location": "akra.fx.SystemCallInstruction"
-                                }
-                            },
-                            "functions": {
                                 "toFinalCode": {
                                     "location": "akra.fx.SystemCallInstruction"
                                 },
@@ -11085,6 +12292,11 @@
                                     "location": "akra.fx.SystemCallInstruction"
                                 },
                                 "clone": {
+                                    "location": "akra.fx.SystemCallInstruction"
+                                }
+                            },
+                            "variables": {
+                                "_pSamplerDecl": {
                                     "location": "akra.fx.SystemCallInstruction"
                                 }
                             }
@@ -11471,12 +12683,12 @@
                                 },
                                 "_pExtractInExpr": {
                                     "location": "akra.fx.ExtractStmtInstruction"
-                                },
-                                "_pExtactExpr": {
-                                    "location": "akra.fx.ExtractStmtInstruction"
                                 }
                             },
                             "functions": {
+                                "ExtractExprInstruction": {
+                                    "location": "akra.fx.ExtractStmtInstruction"
+                                },
                                 "generateStmtForBaseType": {
                                     "location": "akra.fx.ExtractStmtInstruction"
                                 },
@@ -11501,120 +12713,13 @@
                         },
                         "FunctionDeclInstruction": {
                             "location": "akra.fx",
-                            "variables": {
-                                "_pFunctionDefenition": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pImplementation": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_eFunctionType": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_bUsedAsFunction": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_bUsedAsVertex": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_bUsedAsPixel": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_bCanUsedAsFunction": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_bUsedInVertex": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_bUsedInPixel": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pParseNode": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_iImplementationScope": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_isInBlackList": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pOutVariable": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pUsedFunctionMap": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pUsedFunctionList": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pAttributeVariableMap": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pVaryingVariableMap": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pUsedVarTypeMap": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pSharedVariableMap": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pGlobalVariableMap": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pUniformVariableMap": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pForeignVariableMap": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pTextureVariableMap": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pUsedComplexTypeMap": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pAttributeVariableKeys": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pVaryingVariableKeys": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pSharedVariableKeys": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pUniformVariableKeys": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pForeignVariableKeys": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pGlobalVariableKeys": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pTextureVariableKeys": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pUsedComplexTypeKeys": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pVertexShader": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pPixelShader": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pExtSystemTypeList": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pExtSystemFunctionList": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                },
-                                "_pExtSystemMacrosList": {
-                                    "location": "akra.fx.FunctionDeclInstruction"
-                                }
-                            },
                             "functions": {
+                                "FunctionDefInstruction": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "StmtBlockInstruction": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
                                 "toFinalCode": {
                                     "location": "akra.fx.FunctionDeclInstruction"
                                 },
@@ -11882,40 +12987,124 @@
                                 "createOffsetForAttr": {
                                     "location": "akra.fx.FunctionDeclInstruction"
                                 }
+                            },
+                            "variables": {
+                                "_eFunctionType": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_bUsedAsFunction": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_bUsedAsVertex": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_bUsedAsPixel": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_bCanUsedAsFunction": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_bUsedInVertex": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_bUsedInPixel": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pParseNode": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_iImplementationScope": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_isInBlackList": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pOutVariable": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pUsedFunctionMap": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pUsedFunctionList": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pAttributeVariableMap": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pVaryingVariableMap": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pUsedVarTypeMap": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pSharedVariableMap": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pGlobalVariableMap": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pUniformVariableMap": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pForeignVariableMap": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pTextureVariableMap": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pUsedComplexTypeMap": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pAttributeVariableKeys": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pVaryingVariableKeys": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pSharedVariableKeys": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pUniformVariableKeys": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pForeignVariableKeys": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pGlobalVariableKeys": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pTextureVariableKeys": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pUsedComplexTypeKeys": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pVertexShader": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pPixelShader": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pExtSystemTypeList": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pExtSystemFunctionList": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                },
+                                "_pExtSystemMacrosList": {
+                                    "location": "akra.fx.FunctionDeclInstruction"
+                                }
                             }
                         },
                         "SystemFunctionInstruction": {
                             "location": "akra.fx",
-                            "variables": {
-                                "_pExprTranslator": {
-                                    "location": "akra.fx.SystemFunctionInstruction"
-                                },
-                                "_pName": {
-                                    "location": "akra.fx.SystemFunctionInstruction"
-                                },
-                                "_pReturnType": {
-                                    "location": "akra.fx.SystemFunctionInstruction"
-                                },
-                                "_pArguments": {
-                                    "location": "akra.fx.SystemFunctionInstruction"
-                                },
-                                "_sDefinition": {
-                                    "location": "akra.fx.SystemFunctionInstruction"
-                                },
-                                "_sImplementation": {
-                                    "location": "akra.fx.SystemFunctionInstruction"
-                                },
-                                "_pExtSystemTypeList": {
-                                    "location": "akra.fx.SystemFunctionInstruction"
-                                },
-                                "_pExtSystemFunctionList": {
-                                    "location": "akra.fx.SystemFunctionInstruction"
-                                },
-                                "_pExtSystemMacrosList": {
-                                    "location": "akra.fx.SystemFunctionInstruction"
-                                }
-                            },
                             "functions": {
+                                "ExprTemplateTranslator": {
+                                    "location": "akra.fx.SystemFunctionInstruction"
+                                },
+                                "VariableTypeInstruction": {
+                                    "location": "akra.fx.SystemFunctionInstruction"
+                                },
                                 "setDeclCode": {
                                     "location": "akra.fx.SystemFunctionInstruction"
                                 },
@@ -12123,6 +13312,29 @@
                                 "_getExtSystemTypeList": {
                                     "location": "akra.fx.SystemFunctionInstruction"
                                 }
+                            },
+                            "variables": {
+                                "_pName": {
+                                    "location": "akra.fx.SystemFunctionInstruction"
+                                },
+                                "_pArguments": {
+                                    "location": "akra.fx.SystemFunctionInstruction"
+                                },
+                                "_sDefinition": {
+                                    "location": "akra.fx.SystemFunctionInstruction"
+                                },
+                                "_sImplementation": {
+                                    "location": "akra.fx.SystemFunctionInstruction"
+                                },
+                                "_pExtSystemTypeList": {
+                                    "location": "akra.fx.SystemFunctionInstruction"
+                                },
+                                "_pExtSystemFunctionList": {
+                                    "location": "akra.fx.SystemFunctionInstruction"
+                                },
+                                "_pExtSystemMacrosList": {
+                                    "location": "akra.fx.SystemFunctionInstruction"
+                                }
                             }
                         },
                         "FunctionDefInstruction": {
@@ -12261,9 +13473,6 @@
                                 "_pAnalyzedNode": {
                                     "location": "akra.fx.Effect"
                                 },
-                                "_pEffectScope": {
-                                    "location": "akra.fx.Effect"
-                                },
                                 "_pCurrentInstruction": {
                                     "location": "akra.fx.Effect"
                                 },
@@ -12329,12 +13538,15 @@
                                 },
                                 "pSystemVariables": {
                                     "location": "akra.fx.Effect"
-                                },
-                                "pSystemVertexOut": {
-                                    "location": "akra.fx.Effect"
                                 }
                             },
                             "functions": {
+                                "ProgramScope": {
+                                    "location": "akra.fx.Effect"
+                                },
+                                "ComplexTypeInstruction": {
+                                    "location": "akra.fx.Effect"
+                                },
                                 "analyze": {
                                     "location": "akra.fx.Effect"
                                 },
@@ -13128,9 +14340,6 @@
                                 "_isUsedZeroCube": {
                                     "location": "akra.fx.Maker"
                                 },
-                                "_pAttrContainer": {
-                                    "location": "akra.fx.Maker"
-                                },
                                 "_pRealAttrSlotFromFlows": {
                                     "location": "akra.fx.Maker"
                                 },
@@ -13139,13 +14348,16 @@
                                 },
                                 "_pBufferSamplersFromFlows": {
                                     "location": "akra.fx.Maker"
-                                },
-                                "_pDataPoolArray": {
-                                    "location": "akra.fx.Maker"
                                 }
                             },
                             "functions": {
                                 "getGuid": {
+                                    "location": "akra.fx.Maker"
+                                },
+                                "AttributeBlendContainer": {
+                                    "location": "akra.fx.Maker"
+                                },
+                                "ObjectArray": {
                                     "location": "akra.fx.Maker"
                                 },
                                 "isArray": {
@@ -13213,30 +14425,6 @@
                                 "_pFXMakerByHashMap": {
                                     "location": "akra.fx.PassBlend"
                                 },
-                                "_pExtSystemDataV": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pComplexTypeContainerV": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pForeignContainerV": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pUniformContainerV": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pSharedContainerV": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pGlobalContainerV": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pAttributeContainerV": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pVaryingContainerV": {
-                                    "location": "akra.fx.PassBlend"
-                                },
                                 "_pVertexOutType": {
                                     "location": "akra.fx.PassBlend"
                                 },
@@ -13247,27 +14435,6 @@
                                     "location": "akra.fx.PassBlend"
                                 },
                                 "_pTextureMapV": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pExtSystemDataP": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pComplexTypeContainerP": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pForeignContainerP": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pUniformContainerP": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pSharedContainerP": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pGlobalContainerP": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pVaryingContainerP": {
                                     "location": "akra.fx.PassBlend"
                                 },
                                 "_pUsedFunctionListP": {
@@ -13347,19 +14514,28 @@
                                 },
                                 "_sPixelCode": {
                                     "location": "akra.fx.PassBlend"
-                                },
-                                "_pDefaultSamplerBlender": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "_pTexcoordSwapper": {
-                                    "location": "akra.fx.PassBlend"
-                                },
-                                "texcoordSwapper": {
-                                    "location": "akra.fx.PassBlend"
                                 }
                             },
                             "functions": {
                                 "getGuid": {
+                                    "location": "akra.fx.PassBlend"
+                                },
+                                "ExtSystemDataContainer": {
+                                    "location": "akra.fx.PassBlend"
+                                },
+                                "ComplexTypeBlendContainer": {
+                                    "location": "akra.fx.PassBlend"
+                                },
+                                "VariableBlendContainer": {
+                                    "location": "akra.fx.PassBlend"
+                                },
+                                "AttributeBlendContainer": {
+                                    "location": "akra.fx.PassBlend"
+                                },
+                                "SamplerBlender": {
+                                    "location": "akra.fx.PassBlend"
+                                },
+                                "TexcoordSwapper": {
                                     "location": "akra.fx.PassBlend"
                                 },
                                 "initFromPassList": {
@@ -13531,13 +14707,13 @@
                                 },
                                 "_pPassesDList": {
                                     "location": "akra.fx.ComponentBlend"
-                                },
-                                "_pComponentInputVarBlend": {
-                                    "location": "akra.fx.ComponentBlend"
                                 }
                             },
                             "functions": {
                                 "getGuid": {
+                                    "location": "akra.fx.ComponentBlend"
+                                },
+                                "ComponentPassInputBlend": {
                                     "location": "akra.fx.ComponentBlend"
                                 },
                                 "isReadyToUse": {
@@ -13766,14 +14942,14 @@
                                 "_pPostEffectDepthBuffer": {
                                     "location": "akra.fx.Composer"
                                 },
-                                "pDefaultSamplerBlender": {
-                                    "location": "akra.fx.Composer"
-                                },
                                 "bUseNormalMap": {
                                     "location": "akra.fx.Composer"
                                 }
                             },
                             "functions": {
+                                "SamplerBlender": {
+                                    "location": "akra.fx.Composer"
+                                },
                                 "getComponentByName": {
                                     "location": "akra.fx.Composer"
                                 },
@@ -13868,6 +15044,44 @@
                                     "location": "akra.fx.Composer"
                                 }
                             }
+                        }
+                    },
+                    "interfaces": {
+                        "IDataFlowMap": {
+                            "location": "akra.fx"
+                        },
+                        "IAFXVaribaleListMap": {
+                            "location": "akra.fx"
+                        },
+                        "IEffectErrorInfo": {
+                            "location": "akra.fx"
+                        },
+                        "IAFXFunctionDeclListMap": {
+                            "location": "akra.fx"
+                        },
+                        "IScope": {
+                            "location": "akra.fx"
+                        },
+                        "IScopeMap": {
+                            "location": "akra.fx"
+                        },
+                        "SystemTypeMap": {
+                            "location": "akra.fx"
+                        },
+                        "SystemFunctionMap": {
+                            "location": "akra.fx"
+                        },
+                        "TechniqueMap": {
+                            "location": "akra.fx"
+                        },
+                        "IAFXShaderVarTypeMap": {
+                            "location": "akra.fx"
+                        },
+                        "IUniformTypeMap": {
+                            "location": "akra.fx"
+                        },
+                        "IPreRenderState": {
+                            "location": "akra.fx"
                         }
                     },
                     "functions": {
@@ -14584,12 +15798,12 @@
                                 },
                                 "_pLightingUnifoms": {
                                     "location": "akra.render.DSViewport"
-                                },
-                                "_pLightPoints": {
-                                    "location": "akra.render.DSViewport"
                                 }
                             },
                             "functions": {
+                                "ObjectArray": {
+                                    "location": "akra.render.DSViewport"
+                                },
                                 "_updateDimensions": {
                                     "location": "akra.render.DSViewport"
                                 },
@@ -14884,15 +16098,12 @@
                             "variables": {
                                 "_pRenderer": {
                                     "location": "akra.render.RenderQueue"
-                                },
-                                "_pEntryList": {
-                                    "location": "akra.render.RenderQueue"
-                                },
-                                "pool": {
-                                    "location": "akra.render.RenderQueue"
                                 }
                             },
                             "functions": {
+                                "ObjectArray": {
+                                    "location": "akra.render.RenderQueue"
+                                },
                                 "execute": {
                                     "location": "akra.render.RenderQueue"
                                 },
@@ -14922,9 +16133,6 @@
                                 "_pPrioritisedRenderTargets": {
                                     "location": "akra.render.Renderer"
                                 },
-                                "_pRenderQueue": {
-                                    "location": "akra.render.Renderer"
-                                },
                                 "_pActiveViewport": {
                                     "location": "akra.render.Renderer"
                                 },
@@ -14948,6 +16156,9 @@
                                 }
                             },
                             "functions": {
+                                "RenderQueue": {
+                                    "location": "akra.render.Renderer"
+                                },
                                 "getEngine": {
                                     "location": "akra.render.Renderer"
                                 },
@@ -15346,6 +16557,23 @@
                                     "location": "akra.render.RenderDataCollection"
                                 }
                             }
+                        }
+                    },
+                    "interfaces": {
+                        "IUniform": {
+                            "location": "akra.render"
+                        },
+                        "UniformMap": {
+                            "location": "akra.render"
+                        },
+                        "IRenderTechniqueMap": {
+                            "location": "akra.render"
+                        },
+                        "IRenderTargetPriorityMap": {
+                            "location": "akra.render"
+                        },
+                        "IIndexSet": {
+                            "location": "akra.render"
                         }
                     },
                     "functions": {
@@ -16834,6 +18062,11 @@
                             "location": "akra.ui"
                         }
                     },
+                    "interfaces": {
+                        "IUITreeNodeMap": {
+                            "location": "akra.ui"
+                        }
+                    },
                     "modules": {
                         "graph": {
                             "location": "akra.ui",
@@ -17496,9 +18729,55 @@
                                         }
                                     }
                                 }
+                            },
+                            "interfaces": {
+                                "IBlenderSliderContainer": {
+                                    "location": "akra.ui.animation"
+                                }
                             }
                         }
                     }
+                }
+            },
+            "typeDefs": {
+                "VertexElement": {
+                    "location": "akra"
+                },
+                "VertexDeclaration": {
+                    "location": "akra"
+                },
+                "Color": {
+                    "location": "akra"
+                },
+                "Material": {
+                    "location": "akra"
+                },
+                "Pathinfo": {
+                    "location": "akra"
+                },
+                "Vec2": {
+                    "location": "akra"
+                },
+                "Vec3": {
+                    "location": "akra"
+                },
+                "Vec4": {
+                    "location": "akra"
+                },
+                "Mat3": {
+                    "location": "akra"
+                },
+                "Mat4": {
+                    "location": "akra"
+                },
+                "Quat4": {
+                    "location": "akra"
+                },
+                "ObjectArray": {
+                    "location": "akra"
+                },
+                "ObjectList": {
+                    "location": "akra"
                 }
             },
             "classes": {
@@ -17625,5 +18904,455 @@
             "location": ""
         }
     },
-    "variables": {}
+    "variables": {},
+    "typeDefs": {},
+    "interfaces": {
+        "String": {
+            "location": ""
+        },
+        "Array": {
+            "location": ""
+        },
+        "Number": {
+            "location": ""
+        },
+        "WebGLObject": {
+            "location": ""
+        },
+        "WebGLBuffer": {
+            "location": ""
+        },
+        "WebGLFramebuffer": {
+            "location": ""
+        },
+        "WebGLProgram": {
+            "location": ""
+        },
+        "WebGLRenderbuffer": {
+            "location": ""
+        },
+        "WebGLShader": {
+            "location": ""
+        },
+        "WebGLTexture": {
+            "location": ""
+        },
+        "WebGLUniformLocation": {
+            "location": ""
+        },
+        "WebGLActiveInfo": {
+            "location": ""
+        },
+        "WebGLShaderPrecisionFormat": {
+            "location": ""
+        },
+        "WebGLContextAttributes": {
+            "location": ""
+        },
+        "WebGLRenderingContext": {
+            "location": ""
+        },
+        "CanvasRenderingContext": {
+            "location": ""
+        },
+        "HTMLCanvasElement": {
+            "location": ""
+        },
+        "WEBGL_debug_shaders": {
+            "location": ""
+        },
+        "WEBGL_debug_renderer_info": {
+            "location": ""
+        },
+        "WEBGL_compressed_texture_pvrtc": {
+            "location": ""
+        },
+        "WEBGL_compressed_texture_atc": {
+            "location": ""
+        },
+        "WEBGL_compressed_texture_s3tc": {
+            "location": ""
+        },
+        "WEBGL_depth_texture": {
+            "location": ""
+        },
+        "OES_element_index_uint": {
+            "location": ""
+        },
+        "WebGLVertexArrayObjectOES": {
+            "location": ""
+        },
+        "OES_vertex_array_object": {
+            "location": ""
+        },
+        "OES_standard_derivatives": {
+            "location": ""
+        },
+        "OES_texture_half_float": {
+            "location": ""
+        },
+        "OES_texture_float": {
+            "location": ""
+        },
+        "WEBGL_lose_context": {
+            "location": ""
+        },
+        "WEBGL_multiple_render_targets": {
+            "location": ""
+        },
+        "WEBGL_fbo_color_attachments": {
+            "location": ""
+        },
+        "JQueryAjaxSettings": {
+            "location": ""
+        },
+        "JQueryXHR": {
+            "location": ""
+        },
+        "JQueryCallback": {
+            "location": ""
+        },
+        "JQueryPromise": {
+            "location": ""
+        },
+        "JQueryDeferred": {
+            "location": ""
+        },
+        "JQueryEventObject": {
+            "location": ""
+        },
+        "JQueryBrowserInfo": {
+            "location": ""
+        },
+        "JQuerySupport": {
+            "location": ""
+        },
+        "JQueryStatic": {
+            "location": ""
+        },
+        "JQuery": {
+            "location": ""
+        },
+        "AccordionOptions": {
+            "location": ""
+        },
+        "AccordionUIParams": {
+            "location": ""
+        },
+        "AccordionEvent": {
+            "location": ""
+        },
+        "AccordionEvents": {
+            "location": ""
+        },
+        "Accordion": {
+            "location": ""
+        },
+        "AutocompleteOptions": {
+            "location": ""
+        },
+        "AutocompleteUIParams": {
+            "location": ""
+        },
+        "AuotcompleteEvent": {
+            "location": ""
+        },
+        "AutocompleteEvents": {
+            "location": ""
+        },
+        "Autocomplete": {
+            "location": ""
+        },
+        "ButtonOptions": {
+            "location": ""
+        },
+        "Button": {
+            "location": ""
+        },
+        "DatepickerOptions": {
+            "location": ""
+        },
+        "DatepickerFormatDateOptions": {
+            "location": ""
+        },
+        "Datepicker": {
+            "location": ""
+        },
+        "DialogOptions": {
+            "location": ""
+        },
+        "DialogUIParams": {
+            "location": ""
+        },
+        "DialogEvent": {
+            "location": ""
+        },
+        "DialogEvents": {
+            "location": ""
+        },
+        "Dialog": {
+            "location": ""
+        },
+        "DraggableEventUIParams": {
+            "location": ""
+        },
+        "DraggableEvent": {
+            "location": ""
+        },
+        "DraggableOptions": {
+            "location": ""
+        },
+        "DraggableEvents": {
+            "location": ""
+        },
+        "Draggable": {
+            "location": ""
+        },
+        "DroppableEventUIParam": {
+            "location": ""
+        },
+        "DroppableEvent": {
+            "location": ""
+        },
+        "DroppableOptions": {
+            "location": ""
+        },
+        "DroppableEvents": {
+            "location": ""
+        },
+        "Droppable": {
+            "location": ""
+        },
+        "MenuOptions": {
+            "location": ""
+        },
+        "MenuUIParams": {
+            "location": ""
+        },
+        "MenuEvent": {
+            "location": ""
+        },
+        "MenuEvents": {
+            "location": ""
+        },
+        "Menu": {
+            "location": ""
+        },
+        "ProgressbarOptions": {
+            "location": ""
+        },
+        "ProgressbarUIParams": {
+            "location": ""
+        },
+        "ProgressbarEvent": {
+            "location": ""
+        },
+        "ProgressbarEvents": {
+            "location": ""
+        },
+        "Progressbar": {
+            "location": ""
+        },
+        "ResizableOptions": {
+            "location": ""
+        },
+        "ResizableUIParams": {
+            "location": ""
+        },
+        "ResizableEvent": {
+            "location": ""
+        },
+        "ResizableEvents": {
+            "location": ""
+        },
+        "Resizable": {
+            "location": ""
+        },
+        "SelectableOptions": {
+            "location": ""
+        },
+        "SelectableEvents": {
+            "location": ""
+        },
+        "Selectable": {
+            "location": ""
+        },
+        "SliderOptions": {
+            "location": ""
+        },
+        "SliderUIParams": {
+            "location": ""
+        },
+        "SliderEvent": {
+            "location": ""
+        },
+        "SliderEvents": {
+            "location": ""
+        },
+        "Slider": {
+            "location": ""
+        },
+        "SortableOptions": {
+            "location": ""
+        },
+        "SortableUIParams": {
+            "location": ""
+        },
+        "SortableEvent": {
+            "location": ""
+        },
+        "SortableEvents": {
+            "location": ""
+        },
+        "Sortable": {
+            "location": ""
+        },
+        "SpinnerOptions": {
+            "location": ""
+        },
+        "SpinnerUIParams": {
+            "location": ""
+        },
+        "SpinnerEvent": {
+            "location": ""
+        },
+        "SpinnerEvents": {
+            "location": ""
+        },
+        "Spinner": {
+            "location": ""
+        },
+        "TabsOptions": {
+            "location": ""
+        },
+        "TabsUIParams": {
+            "location": ""
+        },
+        "TabsEvent": {
+            "location": ""
+        },
+        "TabsEvents": {
+            "location": ""
+        },
+        "Tabs": {
+            "location": ""
+        },
+        "TooltipOptions": {
+            "location": ""
+        },
+        "TooltipUIParams": {
+            "location": ""
+        },
+        "TooltipEvent": {
+            "location": ""
+        },
+        "TooltipEvents": {
+            "location": ""
+        },
+        "Tooltip": {
+            "location": ""
+        },
+        "EffectOptions": {
+            "location": ""
+        },
+        "BlindEffect": {
+            "location": ""
+        },
+        "BounceEffect": {
+            "location": ""
+        },
+        "ClipEffect": {
+            "location": ""
+        },
+        "DropEffect": {
+            "location": ""
+        },
+        "ExplodeEffect": {
+            "location": ""
+        },
+        "FadeEffect": {
+            "location": ""
+        },
+        "FoldEffect": {
+            "location": ""
+        },
+        "HighlightEffect": {
+            "location": ""
+        },
+        "PuffEffect": {
+            "location": ""
+        },
+        "PulsateEffect": {
+            "location": ""
+        },
+        "ScaleEffect": {
+            "location": ""
+        },
+        "ShakeEffect": {
+            "location": ""
+        },
+        "SizeEffect": {
+            "location": ""
+        },
+        "SlideEffect": {
+            "location": ""
+        },
+        "TransferEffect": {
+            "location": ""
+        },
+        "JQueryPositionOptions": {
+            "location": ""
+        },
+        "MouseOptions": {
+            "location": ""
+        },
+        "keyCode": {
+            "location": ""
+        },
+        "UI": {
+            "location": ""
+        },
+        "WidgetOptions": {
+            "location": ""
+        },
+        "Widget": {
+            "location": ""
+        },
+        "BoundingBox": {
+            "location": ""
+        },
+        "RaphaelAnimation": {
+            "location": ""
+        },
+        "RaphaelFont": {
+            "location": ""
+        },
+        "RaphaelElement": {
+            "location": ""
+        },
+        "RaphaelPath": {
+            "location": ""
+        },
+        "RaphaelSet": {
+            "location": ""
+        },
+        "RaphaelMatrix": {
+            "location": ""
+        },
+        "RaphaelPaper": {
+            "location": ""
+        },
+        "RaphaelStatic": {
+            "location": ""
+        },
+        "SwigOptions": {
+            "location": ""
+        },
+        "SwigTemplate": {
+            "location": ""
+        },
+        "Swig": {
+            "location": ""
+        }
+    }
 }

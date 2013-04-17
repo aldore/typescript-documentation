@@ -50,7 +50,9 @@ module TypeScript {
             modules: {},
             classes: {},
             functions: {},
-            variables: {}
+            variables: {},
+            typeDefs: {},
+            interfaces: {}
         };
 
         private getCurrentContext() {
@@ -78,6 +80,104 @@ module TypeScript {
             }
 
             return sCurrent;
+        }
+
+        private pushTypeDef(varDecl) {
+            var oCurrentContext = this.getCurrentContext();
+            oCurrentContext.typeDefs = oCurrentContext.typeDefs || {};
+            //debugger;
+            if(!oCurrentContext.typeDefs[varDecl.id.text]) {
+                oCurrentContext.typeDefs[varDecl.id.text] = {
+                    location: this.getCurrentContextString()
+                };
+            }
+        }
+
+        private pushVar(varDecl) {
+            var oCurrentContext = this.getCurrentContext();
+            oCurrentContext.variables = oCurrentContext.variables || {};
+            //debugger;
+            if(!oCurrentContext.variables[varDecl.id.text]) {
+                oCurrentContext.variables[varDecl.id.text] = {
+                    location: this.getCurrentContextString()
+                };
+            }
+        }
+
+        private pushFunc(funcDecl) {
+            var oCurrentContext = this.getCurrentContext();
+
+            if(funcDecl.nodeType == NodeType.VarDecl) {
+                console.log("Some shit happened. pushFunc error. variable");
+                oCurrentContext.functions = oCurrentContext.functions || {};
+                if(!oCurrentContext.functions[funcDecl.id.text]) {
+                    oCurrentContext.functions[funcDecl.id.text] = {
+                        location: this.getCurrentContextString()
+                    };
+                }
+            } else if(funcDecl.nodeType == NodeType.FuncDecl) {
+                oCurrentContext.functions = oCurrentContext.functions || {};
+                if(!oCurrentContext.functions[funcDecl.getNameText()]) {
+                    oCurrentContext.functions[funcDecl.getNameText()] = {
+                        location: this.getCurrentContextString()
+                    };
+                }
+            } else {
+                console.log("Some shit happened. pushFunc error.")
+            }
+            
+        }
+
+        private pushClass(classDecl) {
+            var className = classDecl.name.text;
+
+            var oCurrentContext = this.getCurrentContext();
+
+            oCurrentContext.classes = oCurrentContext.classes || {};
+            if(!oCurrentContext.classes[className]) {
+                oCurrentContext.classes[className] = {
+                    location: this.getCurrentContextString()
+                };
+            }
+
+            this.aContext.push({
+                type: "classes",
+                name: className
+            });
+        }
+
+        private pushModule(moduleDecl) {
+            var oCurrentContext = this.getCurrentContext();
+
+            oCurrentContext.modules = oCurrentContext.modules || {};
+            if(!oCurrentContext.modules[moduleDecl.name.text]) {
+                oCurrentContext.modules[moduleDecl.name.text] = {
+                    location: this.getCurrentContextString()
+                };
+            }
+
+            this.aContext.push({
+                type: "modules",
+                name: moduleDecl.name.text
+            });
+        }
+
+        private pushInterface(interfaceDecl) {
+            var interfaceName = interfaceDecl.name.text;
+            var oCurrentContext = this.getCurrentContext();
+
+            oCurrentContext.interfaces = oCurrentContext.interfaces || {};
+            if(!oCurrentContext.interfaces[interfaceName]) {
+                oCurrentContext.interfaces[interfaceName] = {
+                    location: this.getCurrentContextString()
+                };
+            }
+
+            this.aContext.push({
+                type: "interfaces",
+                name: interfaceName
+            });
+
         }
 
         private getAstDeclarationContainer() {
@@ -260,6 +360,7 @@ module TypeScript {
         }
 
         private emitTypeSignature(type: Type) {
+            //debugger;
             var containingScope: SymbolScope = null;
             var declarationContainerAst = this.getAstDeclarationContainer();
             switch (declarationContainerAst.nodeType) {
@@ -347,15 +448,15 @@ module TypeScript {
                 this.emitDeclarationComments(varDecl);
                 if (!interfaceMember) {
 
-                    var oCurrentContext = this.getCurrentContext();
-
-                    oCurrentContext.variables = oCurrentContext.variables || {};
-                    if(!oCurrentContext.variables[varDecl.id.text]) {
-                        oCurrentContext.variables[varDecl.id.text] = {
-                            location: this.getCurrentContextString()
-                        };
+                    if(varDecl.type.isClass() && varDecl.type.isClassInstance()){
+                        this.pushTypeDef(varDecl);
+                    } else if(varDecl.type.symbol.isFunction()) {
+                        this.pushFunc(varDecl.type.symbol.declAST);
+                    } else {
+                        this.pushVar(varDecl);
                     }
                     
+                   
                     // If it is var list of form var a, b, c = emit it only if count > 0 - which will be when emitting first var
                     // If it is var list of form  var a = varList count will be 0
                     if (this.varListCount >= 0) {
@@ -477,14 +578,9 @@ module TypeScript {
                 var id = funcDecl.getNameText();
 
                 if (!isInterfaceMember) {
-                    var oCurrentContext = this.getCurrentContext();
 
-                    oCurrentContext.functions = oCurrentContext.functions || {};
-                    if(!oCurrentContext.functions[id]) {
-                        oCurrentContext.functions[id] = {
-                            location: this.getCurrentContextString()
-                        };
-                    }
+                    this.pushFunc(funcDecl);
+                    
 
                     this.emitDeclFlags(ToDeclFlags(funcDecl.fncFlags), "function");
                     if (id != "__missing" || !funcDecl.name || !funcDecl.name.isMissing()) {
@@ -621,22 +717,8 @@ module TypeScript {
             }
 
             if (pre) {
-                var className = classDecl.name.text;
-
-                var oCurrentContext = this.getCurrentContext();
-
-                oCurrentContext.classes = oCurrentContext.classes || {};
-                if(!oCurrentContext.classes[className]) {
-                    oCurrentContext.classes[className] = {
-                        location: this.getCurrentContextString()
-                    };
-                }
-
-                this.aContext.push({
-                    type: "classes",
-                    name: className
-                });
-
+                this.pushClass(classDecl);
+               
                 this.emitDeclarationComments(classDecl);
                 this.emitDeclFlags(ToDeclFlags(classDecl.varFlags), "class");
                 /*File Write Old*/ // this.declFile.Write(className);
@@ -667,6 +749,7 @@ module TypeScript {
             }
 
             if (pre) {
+                this.pushInterface(interfaceDecl);
                 var interfaceName = interfaceDecl.name.text;
                 this.emitDeclarationComments(interfaceDecl);
                 this.emitDeclFlags(ToDeclFlags(interfaceDecl.varFlags), "interface");
@@ -677,6 +760,7 @@ module TypeScript {
                 this.indenter.increaseIndent();
                 this.pushDeclarationContainer(interfaceDecl);
             } else {
+                this.aContext.pop();
                 this.indenter.decreaseIndent();
                 this.popDeclarationContainer(interfaceDecl);
 
@@ -793,19 +877,7 @@ module TypeScript {
                 }
                 this.dottedModuleEmit += moduleDecl.name.text;
 
-                var oCurrentContext = this.getCurrentContext();
-
-                oCurrentContext.modules = oCurrentContext.modules || {};
-                if(!oCurrentContext.modules[moduleDecl.name.text]) {
-                    oCurrentContext.modules[moduleDecl.name.text] = {
-                        location: this.getCurrentContextString()
-                    };
-                }
-
-                this.aContext.push({
-                    type: "modules",
-                    name: moduleDecl.name.text
-                });
+                this.pushModule(moduleDecl);
 
                 var isCurrentModuleDotted = (moduleDecl.members.members.length == 1 &&
                     moduleDecl.members.members[0].nodeType == NodeType.ModuleDeclaration &&

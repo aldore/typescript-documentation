@@ -13,7 +13,6 @@
 
 
 
-
 //#define trace(...) console.log(__VA_ARGS__)
 
 
@@ -478,9 +477,9 @@ module akra {
         }
     }
 
+    export var _total: number = 0;
 
-    export var sid = ():  number  => (++ sid._iTotal);
-    sid._iTotal = 0;
+    export var sid = ():  number  => (++ _total);
 
 
     export function now():  number  {
@@ -7568,7 +7567,7 @@ module akra.data {
 }
 
 module akra {
-	export var VertexElement = VertexElement;
+	export var VertexElement = data.VertexElement;
 }
 
 
@@ -85596,7 +85595,7 @@ module akra.ui {
 					"<input type=\"checkbox\" id=\"slider-$1\" />" +
 					"<label for=\"slider-$1\"></label>" +
 				"</div>"
-				).replace(/\$1/g, sid())
+				).replace(/\$1/g, <any>sid())
 				));
 
 // this.handleEvent("click");

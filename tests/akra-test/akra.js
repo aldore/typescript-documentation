@@ -186,10 +186,10 @@ var akra;
         }
     }
     akra.getTypeSize = getTypeSize;
+    akra._total = 0;
     akra.sid = /** @inline */function () {
-        return (++akra.sid._iTotal);
+        return (++akra._total);
     };
-    akra.sid._iTotal = 0;
     function now() {
         return (new Date()).getTime();
     }
@@ -2138,7 +2138,7 @@ var akra;
         events.EventTable = EventTable;        
         var EventProvider = (function () {
             function EventProvider() {
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
             }
@@ -2184,7 +2184,7 @@ var akra;
                     this.pRegistrationCode = new pool.ResourceCode(akra.EResourceCodes.INVALID_CODE);
                     this.pNameMap = new Array();
                     this.pDataPool = null;
-                    this._iGuid = akra.sid();
+                    this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                     this._pUnicastSlotMap = null;
                     this._pBroadcastSlotList = null;
                     this.pManager = pManager;
@@ -2815,7 +2815,7 @@ var akra;
                     this.pResourcePool = null;
                     this.iResourceHandle = 0;
                     this.iResourceFlags = 0;
-                    this._iGuid = akra.sid();
+                    this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                     this._pUnicastSlotMap = null;
                     this._pBroadcastSlotList = null;
                     this.pResourceCode = new pool.ResourceCode(0);
@@ -3477,7 +3477,7 @@ var akra;
 })(akra || (akra = {}));
 var akra;
 (function (akra) {
-    akra.VertexElement = akra.VertexElement;
+    akra.VertexElement = akra.data.VertexElement;
 })(akra || (akra = {}));
 var akra;
 (function (akra) {
@@ -18149,7 +18149,7 @@ var akra;
                 this._pChild = null;
                 this._eType = akra.EEntityTypes.UNKNOWN;
                 this._iStateFlags = 0;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._eType = eType;
@@ -19544,7 +19544,7 @@ var akra;
                 this._pTargetMap = {};
                 this._pTargetList = [];
                 this._fDuration = 0.0;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._sName = sName || ("animation-" + "-" + this.getGuid());
@@ -19834,7 +19834,7 @@ var akra;
                 this._pAnimations = [];
                 this._iOptions = 0;
                 this._pActiveAnimation = null;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._pEngine = pEngine;
@@ -22109,7 +22109,7 @@ var akra;
                                 return;
                             }
                             if (!akra.scene.isModel(pModelNode) && pNode.geometry.length > 0) {
-                                pModelNode = pModelNode.scene.createModel(".joint-to-model-link-" + akra.sid());
+                                pModelNode = pModelNode.scene.createModel(".joint-to-model-link-" + ((++/*checked (origin: akra)>>*/akra._total)));
                                 pModelNode.attachToParent(pNode.constructedNode);
                             }
                             pMeshes.insert(this.buildSkinMeshInstance(pNode.controller));
@@ -27560,7 +27560,7 @@ var akra;
                 this.sMaterialSchemeName = akra.DEFAULT_MATERIAL_NAME;
                 this._isAutoUpdated = true;
                 this._csDefaultRenderMethod = null;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._pTarget = pTarget;
@@ -28056,7 +28056,7 @@ var akra;
     (function (render) {
         var RenderPass = (function () {
             function RenderPass(pTechnique, iPass) {
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pTechnique = null;
                 this._pRenderTarget = null;
                 this._iPassNumber = 0;
@@ -28135,7 +28135,7 @@ var akra;
                 this._iCurrentPass = 0;
                 this._pCurrentPass = null;
                 this._iGlobalPostEffectsStart = 0;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._pPassList = [];
@@ -30572,7 +30572,7 @@ var akra;
                 this._pTechniqueMap = {};
                 this._bShadow = true;
                 this._bVisible = true;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._eRenderableType = eType;
@@ -30881,7 +30881,7 @@ var akra;
                 var pDeferredTextures = new Array(2);
                 var pDepthTexture;
                 var pDefferedView = this._pDeferredView = new render.Screen(pEngine.getRenderer());
-                var iGuid = akra.sid();
+                var iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 var iWidth = akra.math.ceilingPowerOfTwo(this.actualWidth);
                 var iHeight = akra.math.ceilingPowerOfTwo(this.actualHeight);
                 if (akra.info.browser.name === "Firefox") {
@@ -31179,7 +31179,7 @@ var akra;
                 this._isAutoUpdate = true;
                 this._bHwGamma = false;
                 this._pViewportList = [];
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._pRenderer = pRenderer;
@@ -31744,7 +31744,7 @@ var akra;
                 this._pActiveViewport = null;
                 this._pActiveRenderTarget = null;
                 this._bLockRenderTarget = false;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._pEngine = pEngine;
@@ -33857,7 +33857,7 @@ var akra;
         ;
         var VertexData = (function () {
             function VertexData(pVertexBuffer, id, iOffset, iCount, pDecl) {
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._pVertexBuffer = pVertexBuffer;
@@ -36784,7 +36784,7 @@ var akra;
             function DisplayList() {
                 this._pScene = null;
                 this._sName = "";
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
             }
@@ -37237,7 +37237,7 @@ var akra;
                 this.level = 0;
                 this.index = 0;
                 this.rearNodeLink = null;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this.membersList = new akra.util.ObjectList();
@@ -39307,7 +39307,7 @@ var akra;
                 this._pBoundingSphere = null;
                 this._pSubMeshes = [];
                 this._bShadow = true;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._sName = sName || null;
@@ -39993,7 +39993,7 @@ var akra;
                 var pBuffer = this._pBuffer;
                 if (!pAttribData) {
                     if (!pAttribBuffer) {
-                        pAttribBuffer = pBuffer.getEngine().getResourceManager().createVertexBuffer('render_data_attrs_' + akra.sid());
+                        pAttribBuffer = pBuffer.getEngine().getResourceManager().createVertexBuffer('render_data_attrs_' + ((++/*checked (origin: akra)>>*/akra._total)));
                         pAttribBuffer.create((pData).byteLength, akra.EHardwareBufferFlags.BACKUP_COPY);
                         this._pAttribBuffer = pAttribBuffer;
                     }
@@ -40307,7 +40307,7 @@ var akra;
                 'use strict';
                 if (!this._pIndexBuffer) {
                     if (this.useMultiIndex()) {
-                        this._pIndexBuffer = this._pBuffer.getEngine().getResourceManager().createVertexBuffer('subset_' + akra.sid());
+                        this._pIndexBuffer = this._pBuffer.getEngine().getResourceManager().createVertexBuffer('subset_' + ((++/*checked (origin: akra)>>*/akra._total)));
                         this._pIndexBuffer.create(((pData).byteLength), akra.EHardwareBufferFlags.BACKUP_COPY);
                     } else {
                     }
@@ -40541,7 +40541,7 @@ var akra;
                 if (eOptions & akra.ERenderDataBufferOptions.VB_READABLE) {
                     iVbOption = akra.ERenderDataBufferOptions.VB_READABLE;
                 }
-                this._pDataBuffer = this._pEngine.getResourceManager().createVideoBuffer("render_data_buffer" + "_" + akra.sid());
+                this._pDataBuffer = this._pEngine.getResourceManager().createVideoBuffer("render_data_buffer" + "_" + ((++/*checked (origin: akra)>>*/akra._total)));
                 this._pDataBuffer.create(0, iVbOption);
                 this._pDataBuffer.addRef();
                 return this._pDataBuffer !== null;
@@ -40641,7 +40641,7 @@ var akra;
                 this._eType = akra.EPipeTypes.UNKNOWN;
                 this._pConnect = null;
                 this._bSetupComplete = false;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 if (!((sAddr) === null)) {
@@ -40920,7 +40920,7 @@ var akra;
                 this._pContext = null;
                 this._eState = ERpcStates.k_Deteached;
                 this._iSystemRoutine = -1;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 if (!((pAddr) === null)) {
@@ -41336,7 +41336,7 @@ var akra;
                 var pRmgr = this._pEngine.getResourceManager();
                 var pInitData = null;
                 for(var i = 0; i < this._pTextures.length; i++) {
-                    this._pTextures[i] = pRmgr.createTexture(".texture-for-mega-" + i + akra.sid());
+                    this._pTextures[i] = pRmgr.createTexture(".texture-for-mega-" + i + ((++/*checked (origin: akra)>>*/akra._total)));
                     this._pTextures[i].create(this._iTextureWidth, this._iTextureHeight, 1, null, akra.ETextureFlags.DYNAMIC, 0, 1, akra.ETextureTypes.TEXTURE_2D, this._eTextureFormat);
                     this._pTextures[i].setWrapMode(akra.ETextureParameters.WRAP_S, akra.ETextureWrapModes.CLAMP_TO_EDGE);
                     this._pTextures[i].setWrapMode(akra.ETextureParameters.WRAP_T, akra.ETextureWrapModes.CLAMP_TO_EDGE);
@@ -42183,7 +42183,7 @@ var akra;
                     }
                 }
                 if (pImageNormalMap.isResourceLoaded()) {
-                    this._pNormalMap = this._pEngine.getResourceManager().createTexture(".terrain-normal-texture" + akra.sid());
+                    this._pNormalMap = this._pEngine.getResourceManager().createTexture(".terrain-normal-texture" + ((++/*checked (origin: akra)>>*/akra._total)));
                     this._pNormalMap.loadImage(pImageNormalMap);
                     this._pNormalImage = pImageNormalMap;
                 } else {
@@ -43771,7 +43771,7 @@ var akra;
                 this._pDisplayLists = [];
                 this._pDisplayListsCount = 0;
                 this._isUpdated = false;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._pSceneManager = pSceneManager;
@@ -54747,7 +54747,7 @@ var akra;
     (function (fx) {
         var Maker = (function () {
             function Maker(pComposer) {
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pComposer = null;
                 this._pShaderProgram = null;
                 this._pRealUniformNameList = null;
@@ -55295,7 +55295,7 @@ var akra;
     (function (fx) {
         var PassBlend = (function () {
             function PassBlend(pComposer) {
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pComposer = null;
                 this._pFXMakerByHashMap = null;
                 this._pExtSystemDataV = null;
@@ -56315,7 +56315,7 @@ var akra;
     (function (fx) {
         var ComponentBlend = (function () {
             function ComponentBlend(pComposer) {
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pComposer = null;
                 this._isReady = false;
                 this._sHash = "";
@@ -58109,7 +58109,7 @@ var akra;
         var DepsManager = (function () {
             function DepsManager(pEngine) {
                 this._eState = EDepsManagerStates.IDLE;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._pEngine = pEngine;
@@ -58351,7 +58351,7 @@ var akra;
                     0, 
                     0
                 ];
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
             }
@@ -60189,7 +60189,7 @@ var akra;
             function Switch(parent, options, eType) {
                 if (typeof eType === "undefined") { eType = akra.EUIComponents.SWITCH; }
                 var _this = this;
-                        _super.call(this, parent, options, eType, $(("<div class=\"component-switch\">" + "<input type=\"checkbox\" id=\"slider-$1\" />" + "<label for=\"slider-$1\"></label>" + "</div>").replace(/\$1/g, akra.sid())));
+                        _super.call(this, parent, options, eType, $(("<div class=\"component-switch\">" + "<input type=\"checkbox\" id=\"slider-$1\" />" + "<label for=\"slider-$1\"></label>" + "</div>").replace(/\$1/g, ((++/*checked (origin: akra)>>*/akra._total)))));
                 this.$checkbox = this.el.find("input[type=checkbox]");
                 this.$checkbox.click(function (e) {
                     e.stopPropagation();
@@ -63301,7 +63301,7 @@ var akra;
         var UI = (function () {
             function UI(pManager) {
                 if (typeof pManager === "undefined") { pManager = null; }
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._pManager = pManager;
@@ -63394,7 +63394,7 @@ var akra;
                 this._isDepsLoaded = false;
                 this._pGamepads = null;
                 this._fElapsedAppTime = 0.0;
-                this._iGuid = akra.sid();
+                this._iGuid = ((++/*checked (origin: akra)>>*/akra._total));
                 this._pUnicastSlotMap = null;
                 this._pBroadcastSlotList = null;
                 this._pResourceManager = new core.pool.ResourcePoolManager(this);
