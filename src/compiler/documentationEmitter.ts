@@ -93,16 +93,146 @@ module TypeScript {
             }
         }
 
-        private pushVar(varDecl) {
+        private pushVar(varDecl: VarDecl) {
             var oCurrentContext = this.getCurrentContext();
             oCurrentContext.variables = oCurrentContext.variables || {};
             //debugger;
             if(!oCurrentContext.variables[varDecl.id.text]) {
+                var sType: string = varDecl.type.getTypeName();
+
                 oCurrentContext.variables[varDecl.id.text] = {
-                    location: this.getCurrentContextString()
+                    location: this.getCurrentContextString(),
+                    type: sType
                 };
+
+                if(varDecl.init){
+                    oCurrentContext.variables[varDecl.id.text].init = this.getInitVariableData(varDecl.init);
+                }
             }
         }
+
+        private getInitVariableData(init: AST) {
+            /*FIXME надо переработать свитч не на основе NodeType а на основе Типа init (UnaryExpression, Binary, Call и т.п. и плясать от них. в случае с Binary так точно удобнее т.к. операторов много)*/
+            if (init) {
+                var sText: string = "";
+                var pValue: any = undefined;
+                switch (init.nodeType) {
+                    case NodeType.True:
+                        sText = "true";
+                        pValue = true;
+                        break;
+                    case NodeType.False:
+                        sText = "false";
+                        pValue = false;
+                        break;
+                    case NodeType.ObjectLit:
+                        sText = "{";
+                        if (<ASTList>(<UnaryExpression>init).operand) {
+                            var members = (<ASTList>(<UnaryExpression>init).operand).members;
+                            if (members.length !== 0) {
+                                for (var i = 0; i < members.length; i++) {
+                                    sText += this.getInitVariableData(members[i]).text;
+                                    if (i != members.length - 1) {
+                                        sText += ",";
+                                    }
+                                }
+                            }
+                        }
+                        
+                        sText += "}";
+                        break;
+                    case NodeType.Call:
+                        var callExpr = <CallExpression>init;
+                        var result = this.getInitVariableData(callExpr.target);
+                        
+                        sText = result.text + "(";
+                        for (var i = 0; i < callExpr.arguments.members.length; i++) {
+                            sText += this.getInitVariableData(callExpr.arguments.members[i]);
+                            if (i != callExpr.arguments.members.length - 1) {
+                                sText += ",";
+                            }
+                        }
+                        sText += ")";
+
+                        break;
+                    case NodeType.Null:
+                        sText = "null";
+                        pValue = null;
+                        break;
+                    case NodeType.NumberLit:
+                        var numLit = <NumberLiteral>init;
+                        sText = numLit.text;
+                        pValue = numLit.value;
+                        break;
+                    case NodeType.ArrayLit:
+                        sText = "[]";
+                        /*WARN возможно что тот же тип нода используется для изначального задания массива - тогда нужно проходить по переменным, но они не всегда есть*/
+                        break;
+                    case NodeType.New:
+                        /*WARN Надо их как то объединить с Call*/
+                        debugger;
+                        var callExpr = <CallExpression>init;
+                        var result = this.getInitVariableData(callExpr.target);
+                        sText = "new " + result.text + "(";
+                        if (callExpr.arguments) {
+                            for (var i = 0; i < callExpr.arguments.members.length; i++) {
+                                sText += this.getInitVariableData(callExpr.arguments.members[i]).text;
+                                if (i != callExpr.arguments.members.length - 1) {
+                                    sText += ",";
+                                }
+                            }
+                        } else {
+                            /*WARN странно что это возможно*/
+                            debugger;
+                        }
+                        
+                        sText += ")";
+
+                        break;
+                    case NodeType.Dot:
+                        var binop = <BinaryExpression>init;
+                        if (binop.operand1.nodeType === NodeType.Name && binop.operand2.nodeType === NodeType.Name) {
+                            sText = (<Identifier>binop.operand1).text + "." + (<Identifier>binop.operand2).text;
+                        } else {
+                            debugger;
+                        }
+                        break;
+                    case NodeType.Name:
+                        /*FIXME помимо названия было бы неплохо еще либо делать ссылку на переменную, либо помечать гед она лежит... В общем надо подумать.*/
+                        var ident = <Identifier> init;
+                        sText = ident.text;
+                        break;
+                    case NodeType.Neg:
+                        var result = this.getInitVariableData((<UnaryExpression>init).operand);
+                        sText = (result.text !== "") ? "-" + result.text : "";
+                        pValue = (result.value !== undefined) ? -result.value : undefined;
+                        break;
+                    case NodeType.QString:
+                        sText = (<StringLiteral>init).text;
+                        pValue = (<StringLiteral>init).text;
+                        break;
+                    case NodeType.TypeAssertion:
+                        var result = this.getInitVariableData((<UnaryExpression>init).operand);
+                        sText = (result.text !== "") ? "<" + init.type.getTypeName() + ">" +result.text : "";
+                        pValue = (result.value !== undefined) ? -result.value : undefined;
+                        break;
+                    case NodeType.Member:
+                        /*FIXME эту штука срабатыевает при задание объекта. Первое срабатывание DeclarationUsages*/
+                        break;
+                    default:
+                       //debugger
+                        break;
+                }
+
+                return {
+                    text: sText,
+                    value: pValue
+                }
+            }
+
+            return null;
+        }
+
 
         private pushFunc(funcDecl) {
             var oCurrentContext = this.getCurrentContext();
@@ -188,7 +318,7 @@ module TypeScript {
             return (this.isDottedModuleName.length == 0) ? false : this.isDottedModuleName[this.isDottedModuleName.length - 1];
         }
 
-        constructor (public checker: TypeChecker, public emitOptions: EmitOptions, public errorReporter: ErrorReporter) {
+        constructor(public checker: TypeChecker, public emitOptions: EmitOptions, public errorReporter: ErrorReporter) {
         }
 
         public setDeclarationFile(file: ITextWriter) {
@@ -467,6 +597,7 @@ module TypeScript {
                 } else {
                     this.emitIndent();
                     /*File Write Old*/ // this.declFile.Write(varDecl.id.text);
+                    this.pushVar(varDecl);
                     if (hasFlag(varDecl.id.flags, ASTFlags.OptionalName)) {
                         /*File Write Old*/ // this.declFile.Write("?");
                     }

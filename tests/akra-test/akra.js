@@ -187,7 +187,8 @@ var akra;
     }
     akra.getTypeSize = getTypeSize;
     akra._total = 0;
-    akra.sid = /** @inline */function () {
+    akra.sid = /** @inline */function (tmp) {
+        if (typeof tmp === "undefined") { tmp = 1; }
         return (++akra._total);
     };
     function now() {
@@ -376,7 +377,7 @@ var akra;
         };
         bf.setAll = /** @inline */function (value, set, setting) {
             if (typeof setting === "undefined") { setting = true; }
-            return (setting ? bf.setAll(value, set) : (((value) &= ~(set))));
+            return (setting ? ((value) |= (set)) : ((value) &= ~(set)));
         };
         bf.clearAll = /** @inline */function (value, set) {
             return ((value) &= ~(set));

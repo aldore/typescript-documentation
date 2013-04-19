@@ -52,6 +52,7 @@ module akra {
         message?: string;
         info: any;
     }
+    
 
     export interface ILogger {
 
@@ -479,7 +480,7 @@ module akra {
 
     export var _total: number = 0;
 
-    export var sid = ():  number  => (++ _total);
+    export var sid = (tmp: number = 1):  number  => (++ _total);
 
 
     export function now():  number  {
@@ -870,7 +871,7 @@ module akra.bf {
 	 * @inline
 	 */
 
-	export var setAll = (value:  number , set:  number , setting: bool = true) => (setting ? setAll(value, set) : clearAll(value, set));
+	export var setAll = (value:  number , set:  number , setting: bool = true) => (setting ? ((value) |= (set)) : ((value) &= ~(set)));
 /**
 	 * Выставляет все биты у числа @a value равными единице,
  	 * которые равны единице у числа @a set
@@ -5970,7 +5971,7 @@ module akra.events {
 
 
 	export class EventProvider implements IEventProvider {
-		/**@protected*/ _iGuid: number = sid(); /**@inline*/ getGuid(): number { return this._iGuid; } /**@protected*/ _pUnicastSlotMap: IEventSlotMap = null; /**@protected*/ _pBroadcastSlotList: IEventSlotListMap = null; /**@protected*/ static _pEventTable: IEventTable = new events.EventTable(); /**@inline*/ getEventTable(): IEventTable { return EventProvider._pEventTable; } /**@inline*/ connect(pSender: IEventProvider, sSignal: string, sSlot: string, eType?: EEventTypes): bool { return pSender.getEventTable().addDestination((<events.EventProvider>pSender).getGuid(), sSignal, this, sSlot, eType); }; /**@inline*/ disconnect(pSender: IEventProvider, sSignal: string, sSlot: string, eType?: EEventTypes): bool { return pSender.getEventTable().removeDestination((<events.EventProvider>pSender).getGuid(), sSignal, this, sSlot, eType); } /**@inline*/ bind(sSignal: string, fnListener: Function, eType?: EEventTypes): bool { return this.getEventTable().addListener(this.getGuid(), sSignal, fnListener, eType); } /**@inline*/ unbind(sSignal: string, fnListener?: Function, eType?: EEventTypes): bool { return this.getEventTable().removeListener(this.getGuid(), sSignal, fnListener, eType); } /**@inline*/ _syncTable(pFrom: IEventProvider): void { this.getEventTable()._sync(this, pFrom); } ;
+		/**@protected*/ _iGuid: number = sid(23); /**@inline*/ getGuid(): number { return this._iGuid; } /**@protected*/ _pUnicastSlotMap: IEventSlotMap = null; /**@protected*/ _pBroadcastSlotList: IEventSlotListMap = null; /**@protected*/ static _pEventTable: IEventTable = new events.EventTable(); /**@inline*/ getEventTable(): IEventTable { return EventProvider._pEventTable; } /**@inline*/ connect(pSender: IEventProvider, sSignal: string, sSlot: string, eType?: EEventTypes): bool { return pSender.getEventTable().addDestination((<events.EventProvider>pSender).getGuid(), sSignal, this, sSlot, eType); }; /**@inline*/ disconnect(pSender: IEventProvider, sSignal: string, sSlot: string, eType?: EEventTypes): bool { return pSender.getEventTable().removeDestination((<events.EventProvider>pSender).getGuid(), sSignal, this, sSlot, eType); } /**@inline*/ bind(sSignal: string, fnListener: Function, eType?: EEventTypes): bool { return this.getEventTable().addListener(this.getGuid(), sSignal, fnListener, eType); } /**@inline*/ unbind(sSignal: string, fnListener?: Function, eType?: EEventTypes): bool { return this.getEventTable().removeListener(this.getGuid(), sSignal, fnListener, eType); } /**@inline*/ _syncTable(pFrom: IEventProvider): void { this.getEventTable()._sync(this, pFrom); } ;
 	}
 }
 
