@@ -97,17 +97,33 @@ module TypeScript {
             var oCurrentContext = this.getCurrentContext();
             oCurrentContext.variables = oCurrentContext.variables || {};
             //debugger;
-            if(!oCurrentContext.variables[varDecl.id.text]) {
-                var sType: string = varDecl.type.getTypeName();
+            var oVariable = null;
+            var sType: string = varDecl.type.getTypeName();
 
-                oCurrentContext.variables[varDecl.id.text] = {
-                    location: this.getCurrentContextString(),
-                    type: sType
-                };
+            oVariable = {
+                location: this.getCurrentContextString(),
+                type: sType
+            };
 
-                if(varDecl.init){
-                    oCurrentContext.variables[varDecl.id.text].init = this.getInitVariableData(varDecl.init);
+            if (varDecl.init) {
+                //oCurrentContext.variables[varDecl.id.text].init = this.getInitVariableData(varDecl.init);
+            }
+
+            if (varDecl.isProperty()) {
+                if (varDecl.isStatic()) {
+                    oCurrentContext.variables["static"] = oCurrentContext.variables["static"] || {};
+                    oCurrentContext.variables["static"][varDecl.id.text] = oVariable;
+                } else if (varDecl.isPrivate()) {
+                    oCurrentContext.variables["private"] = oCurrentContext.variables["private"] || {};
+                    oCurrentContext.variables["private"][varDecl.id.text] = oVariable;
+                } else if (varDecl.isPublic()) {
+                    oCurrentContext.variables["public"] = oCurrentContext.variables["public"] || {};
+                    oCurrentContext.variables["public"][varDecl.id.text] = oVariable;
+                } else {
+                    oCurrentContext.variables[varDecl.id.text] = oVariable;
                 }
+            } else {
+                oCurrentContext.variables[varDecl.id.text] = oVariable;
             }
         }
 
