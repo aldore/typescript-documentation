@@ -696,6 +696,10 @@ module TypeScript {
             return getDeclareFilePath(fileName);
         }
 
+        static mapToJSONFileName(fileName: string, wholeFileNameReplaced: bool) {
+            return getJSONFilePath(fileName)
+        }
+
         private canEmitDocumentation(script?: Script) {
             if (!this.settings.generateDocumentationFiles) {
                 return false;
@@ -746,7 +750,7 @@ module TypeScript {
             }
 
             if (!documentationEmitter) {
-                var documentationFileName = this.emitSettings.mapOutputFileName(script.locationInfo.filename, TypeScriptCompiler.mapToDTSFileName);
+                var documentationFileName = this.emitSettings.mapOutputFileName(script.locationInfo.filename, TypeScriptCompiler.mapToJSONFileName);
                 var documentationFile = this.createFile(documentationFileName, this.useUTF8ForFile(script));
 
                 documentationEmitter = new DocumentationEmitter(this.typeChecker, this.emitSettings, this.errorReporter);

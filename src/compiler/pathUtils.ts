@@ -90,6 +90,10 @@ module TypeScript {
         return isSTRFile(fname) ? changePathToDSTR(fname) : isTSFile(fname) ? changePathToDTS(fname) : changePathToDTS(fname);
     }
 
+    export function getJSONFilePath(fname: string) {
+        return isSTRFile(fname) ? changePathToJSON(fname) : isTSFile(fname) ? changePathToJSON(fname) : changePathToJSON(fname);
+    }
+
     function isFileOfExtension(fname: string, ext: string) {
         var invariantFname = fname.toLocaleUpperCase();
         var invariantExt = ext.toLocaleUpperCase();
@@ -184,6 +188,10 @@ module TypeScript {
 
     export function changePathToDTS(modPath: string) {
         return trimModName(stripQuotes(modPath)) + ".d.ts";
+    }
+
+    export function changePathToJSON(modPath: string) {
+        return trimModName(stripQuotes(modPath)) + ".json";
     }
 
     export function isRelative(path: string) {
