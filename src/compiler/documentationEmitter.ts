@@ -36,6 +36,13 @@ module TypeScript {
         }
     }
 
+    /*interface FuncDoc {
+        arguments;
+        variableArgList: bool;
+        type: string;
+        location: string;
+    }*/
+
     export class DocumentationEmitter implements AstWalkerWithDetailCallback.AstWalkerDetailCallback {
         private declFile: DocFileWriter = null;
         private indenter = new Indenter();
@@ -46,14 +53,7 @@ module TypeScript {
         private singleDeclFile: DocFileWriter = null;
         private varListCount: number = 0;
         private aContext = [];
-        private oDocumentation = {
-            modules: {},
-            classes: {},
-            functions: {},
-            variables: {},
-            typeDefs: {},
-            interfaces: {}
-        };
+        private oDocumentation = {};
 
         private getCurrentContext() {
             var oCurrent = this.oDocumentation;
@@ -84,18 +84,19 @@ module TypeScript {
 
         private pushTypeDef(varDecl) {
             var oCurrentContext = this.getCurrentContext();
-            oCurrentContext.typeDefs = oCurrentContext.typeDefs || {};
+            oCurrentContext["typeDefs"] = oCurrentContext["typeDefs"] || {};
             //debugger;
-            if(!oCurrentContext.typeDefs[varDecl.id.text]) {
-                oCurrentContext.typeDefs[varDecl.id.text] = {
+            if (!oCurrentContext["typeDefs"][varDecl.id.text]) {
+                oCurrentContext["typeDefs"][varDecl.id.text] = {
                     location: this.getCurrentContextString()
                 };
             }
         }
 
+        /*OK*/
         private pushVar(varDecl: VarDecl) {
             var oCurrentContext = this.getCurrentContext();
-            oCurrentContext.variables = oCurrentContext.variables || {};
+            oCurrentContext["variables"] = oCurrentContext["variables"] || {};
             //debugger;
             var oVariable = null;
             var sType: string = varDecl.type.getTypeName();
@@ -111,19 +112,19 @@ module TypeScript {
 
             if (varDecl.isProperty()) {
                 if (varDecl.isStatic()) {
-                    oCurrentContext.variables["static"] = oCurrentContext.variables["static"] || {};
-                    oCurrentContext.variables["static"][varDecl.id.text] = oVariable;
+                    oCurrentContext["variables"]["static"] = oCurrentContext["variables"]["static"] || {};
+                    oCurrentContext["variables"]["static"][varDecl.id.text] = oVariable;
                 } else if (varDecl.isPrivate()) {
-                    oCurrentContext.variables["private"] = oCurrentContext.variables["private"] || {};
-                    oCurrentContext.variables["private"][varDecl.id.text] = oVariable;
+                    oCurrentContext["variables"]["private"] = oCurrentContext["variables"]["private"] || {};
+                    oCurrentContext["variables"]["private"][varDecl.id.text] = oVariable;
                 } else if (varDecl.isPublic()) {
-                    oCurrentContext.variables["public"] = oCurrentContext.variables["public"] || {};
-                    oCurrentContext.variables["public"][varDecl.id.text] = oVariable;
+                    oCurrentContext["variables"]["public"] = oCurrentContext["variables"]["public"] || {};
+                    oCurrentContext["variables"]["public"][varDecl.id.text] = oVariable;
                 } else {
-                    oCurrentContext.variables[varDecl.id.text] = oVariable;
+                    oCurrentContext["variables"][varDecl.id.text] = oVariable;
                 }
             } else {
-                oCurrentContext.variables[varDecl.id.text] = oVariable;
+                oCurrentContext["variables"][varDecl.id.text] = oVariable;
             }
         }
 
@@ -249,39 +250,149 @@ module TypeScript {
             return null;
         }
 
+        
 
-        private pushFunc(funcDecl) {
+        private pushFunc(funcDecl, funcName?: string) {
             var oCurrentContext = this.getCurrentContext();
+            var isInterfaceMember = (this.getAstDeclarationContainer().nodeType == NodeType.InterfaceDeclaration);
 
-            if(funcDecl.nodeType == NodeType.VarDecl) {
-                console.log("Some shit happened. pushFunc error. variable");
-                oCurrentContext.functions = oCurrentContext.functions || {};
-                if(!oCurrentContext.functions[funcDecl.id.text]) {
-                    oCurrentContext.functions[funcDecl.id.text] = {
-                        location: this.getCurrentContextString()
-                    };
-                }
-            } else if(funcDecl.nodeType == NodeType.FuncDecl) {
-                oCurrentContext.functions = oCurrentContext.functions || {};
-                if(!oCurrentContext.functions[funcDecl.getNameText()]) {
-                    oCurrentContext.functions[funcDecl.getNameText()] = {
-                        location: this.getCurrentContextString()
-                    };
-                }
-            } else {
-                console.log("Some shit happened. pushFunc error.")
+            if (funcDecl.nodeType != NodeType.FuncDecl) {
+                console.log("Some shit happened. pushFunc error.");
+                return false;
             }
+
+            var oFunction = {};
+            oFunction["comments"] = [];
+
+            var comments = <Comment[]>funcDecl.getDocComments();
+            if (comments.length > 0) {
+                for (var i = 0; i < comments.length; i++) {
+                    oFunction["comments"].push(comments[i].getText());
+                }
+            }
+
             
+            oFunction["location"] = this.getCurrentContextString();
+
+            if (funcDecl.arguments) {
+                oFunction["arguments"] = [];
+                var argsLen = funcDecl.arguments.members.length;
+
+                if (funcDecl.variableArgList) {
+                    oFunction["variableArgList"] = true;
+                    argsLen--;
+                }
+
+                for (var i = 0; i < argsLen; i++) {
+                    var argDecl = <ArgDecl>funcDecl.arguments.members[i];
+                    this.pushFunctionArg(oFunction, argDecl, funcDecl);
+                }
+            }
+
+            if (funcDecl.variableArgList) {
+                var lastArg = <ArgDecl>funcDecl.arguments.members[funcDecl.arguments.members.length - 1];
+                oFunction["arguments"].push({ "name": "..." });
+                this.pushFunctionArg(oFunction, lastArg, funcDecl);
+            }
+
+            if (funcDecl.isConstructor) {
+                oCurrentContext["constructors"] = oCurrentContext["constructors"] || [];
+                oCurrentContext["constructors"].push(oFunction);
+            } else if (!isInterfaceMember) {
+                oFunction["type"] = this.emitTypeSignature(funcDecl.signature.returnType.type);
+                
+                oFunction["isInline"] = funcDecl.isInline();
+                oCurrentContext["functions"] = oCurrentContext["functions"] || {};
+                oCurrentContext["functions"][funcName ? funcName : funcDecl.getNameText()] = oFunction;
+            }            
+        }
+        
+        private pushFunctionArg(oFunction, argDecl: ArgDecl, funcDecl: FuncDecl) {
+            var oArgument = {};
+
+            oArgument["name"] = argDecl.id.text;
+            oArgument["isOptional"] = argDecl.isOptionalArg() ? true : false;
+            oArgument["type"] = this.emitTypeSignature(argDecl.type);
+
+            if ((argDecl.typeExpr || argDecl.type != this.checker.anyType) && this.canEmitTypeAnnotationSignature(ToDeclFlags(funcDecl.fncFlags))) {
+                oArgument["type"] = this.emitTypeSignature(argDecl.type);
+            }
+
+            oFunction["arguments"].push(oArgument);
         }
 
-        private pushClass(classDecl) {
+        /*OK*/
+        private pushGetterSetter(funcDecl: FuncDecl) {
+            var accessorSymbol = <FieldSymbol>funcDecl.accessorSymbol;
+            var oCurrentContext = this.getCurrentContext();
+
+            var propertyType = accessorSymbol.getType();
+            var sType = "";
+            if (this.canEmitTypeAnnotationSignature(ToDeclFlags(accessorSymbol.flags))) {
+                sType = this.emitTypeSignature(propertyType);
+            }
+
+
+            if (accessorSymbol.getter) {               
+                oCurrentContext["getters"] = oCurrentContext["getters"] || {};
+                
+                oCurrentContext["getters"][funcDecl.getNameText()] = {
+                    type: sType,
+                    isInline: (<FuncDecl>accessorSymbol.getter.declAST).isInline(),
+                    location: this.getCurrentContextString()
+                };
+            }
+
+            if (accessorSymbol.setter) {
+                oCurrentContext["setters"] = oCurrentContext["setters"] || {};
+
+                oCurrentContext["setters"][funcDecl.getNameText()] = {
+                    type: sType,
+                    inline: (<FuncDecl>accessorSymbol.setter.declAST).isInline(),
+                    location: this.getCurrentContextString()
+                };
+            }
+        }
+
+        private pushEnum(enumDecl: ModuleDeclaration) {
+            if (!this.canEmitSignature(ToDeclFlags(enumDecl.modFlags))) {
+                return false;
+            }
+
+            var oCurrentContext = this.getCurrentContext();
+            var oEnum = [];
+
+            oCurrentContext["enums"] = oCurrentContext["enums"] || {};
+
+            debugger;
+
+            var membersLen = enumDecl.members.members.length;
+            for (var j = 1; j < membersLen; j++) {
+                var memberDecl: AST = enumDecl.members.members[j];
+                if (memberDecl.nodeType == NodeType.VarDecl) {
+                    oEnum.push({
+                        name: (<VarDecl>memberDecl).id.text,
+                        text: (<NumberLiteral>(<VarDecl>memberDecl).init).text,
+                        value: (<NumberLiteral>(<VarDecl>memberDecl).init).value
+                    });
+                } else {
+                    CompilerDiagnostics.assert(memberDecl.nodeType != NodeType.Asg, "We want to catch this");
+                }
+            }
+
+            oCurrentContext["enums"][enumDecl.name.text] = oEnum;
+            return false;
+        }
+
+        /*OK*/
+        private pushClass(classDecl: ClassDeclaration) {
             var className = classDecl.name.text;
 
             var oCurrentContext = this.getCurrentContext();
 
-            oCurrentContext.classes = oCurrentContext.classes || {};
-            if(!oCurrentContext.classes[className]) {
-                oCurrentContext.classes[className] = {
+            oCurrentContext["classes"] = oCurrentContext["classes"] || {};
+            if (!oCurrentContext["classes"][className]) {
+                oCurrentContext["classes"][className] = {
                     location: this.getCurrentContextString()
                 };
             }
@@ -292,12 +403,13 @@ module TypeScript {
             });
         }
 
+        /*OK*/
         private pushModule(moduleDecl) {
             var oCurrentContext = this.getCurrentContext();
 
-            oCurrentContext.modules = oCurrentContext.modules || {};
-            if(!oCurrentContext.modules[moduleDecl.name.text]) {
-                oCurrentContext.modules[moduleDecl.name.text] = {
+            oCurrentContext["modules"] = oCurrentContext["modules"] || {};
+            if (!oCurrentContext["modules"][moduleDecl.name.text]) {
+                oCurrentContext["modules"][moduleDecl.name.text] = {
                     location: this.getCurrentContextString()
                 };
             }
@@ -308,13 +420,14 @@ module TypeScript {
             });
         }
 
+        /*OK*/
         private pushInterface(interfaceDecl) {
             var interfaceName = interfaceDecl.name.text;
             var oCurrentContext = this.getCurrentContext();
 
-            oCurrentContext.interfaces = oCurrentContext.interfaces || {};
-            if(!oCurrentContext.interfaces[interfaceName]) {
-                oCurrentContext.interfaces[interfaceName] = {
+            oCurrentContext["interfaces"] = oCurrentContext["interfaces"] || {};
+            if (!oCurrentContext["interfaces"][interfaceName]) {
+                oCurrentContext["interfaces"][interfaceName] = {
                     location: this.getCurrentContextString()
                 };
             }
@@ -465,12 +578,14 @@ module TypeScript {
             this.declarationContainerStack.pop();
         }
 
-        private emitTypeNamesMember(memberName: MemberName, emitIndent? : bool = false) {
+        private emitTypeNamesMember(memberName: MemberName, emitIndent?: bool = false) {
+            var sReturn = "";
             if (memberName.prefix == "{ ") {
                 if (emitIndent) {
                     this.emitIndent();
                 }
                 /*File Write Old*/ // this.declFile.WriteLine("{");
+                sReturn += "{";
                 this.indenter.increaseIndent();
                 emitIndent = true;
             } else if (memberName.prefix != "") {
@@ -478,6 +593,7 @@ module TypeScript {
                     this.emitIndent();
                 }
                 /*File Write Old*/ // this.declFile.Write(memberName.prefix);
+                sReturn += memberName.prefix;
                 emitIndent = false;
             }
 
@@ -485,12 +601,14 @@ module TypeScript {
                 if (emitIndent) {
                     this.emitIndent();
                 }
+                sReturn += (<MemberNameString>memberName).text;
                 /*File Write Old*/ // this.declFile.Write((<MemberNameString>memberName).text);
             } else {
                 var ar = <MemberNameArray>memberName;
                 for (var index = 0; index < ar.entries.length; index++) {
                     this.emitTypeNamesMember(ar.entries[index], emitIndent);
                     if (ar.delim == "; ") {
+                        sReturn += "; ";
                         /*File Write Old*/ // this.declFile.WriteLine(";");
                     }
                 }
@@ -499,10 +617,14 @@ module TypeScript {
             if (memberName.suffix == "}") {
                 this.indenter.decreaseIndent();
                 this.emitIndent();
+                sReturn += memberName.suffix;
                 /*File Write Old*/ // this.declFile.Write(memberName.suffix);
             } else {
+                sReturn += memberName.suffix;
                 /*File Write Old*/ // this.declFile.Write(memberName.suffix);
             }
+
+            return sReturn;
         }
 
         private emitTypeSignature(type: Type) {
@@ -536,7 +658,8 @@ module TypeScript {
             }
 
             var typeNameMembers = type.getScopedTypeNameEx(containingScope);
-            this.emitTypeNamesMember(typeNameMembers);
+            var sType = this.emitTypeNamesMember(typeNameMembers);
+            return sType;
         }
 
         private emitComment(comment: Comment) {
@@ -594,10 +717,13 @@ module TypeScript {
                 this.emitDeclarationComments(varDecl);
                 if (!interfaceMember) {
 
-                    if(varDecl.type.isClass() && varDecl.type.isClassInstance()){
+
+                    if (varDecl.type.isClass() && varDecl.type.isClassInstance()) {
                         this.pushTypeDef(varDecl);
-                    } else if(varDecl.type.symbol.isFunction()) {
-                        this.pushFunc(varDecl.type.symbol.declAST);
+                    } else if (varDecl.type.isClassInstance()) {
+                        this.pushVar(varDecl);
+                    } else if (varDecl.type.symbol.isFunction()) {
+                        this.pushFunc(varDecl.type.symbol.declAST, varDecl.id.text);
                     } else {
                         this.pushVar(varDecl);
                     }
@@ -637,7 +763,11 @@ module TypeScript {
                 }
                
                 // emitted one var decl
-                if (this.varListCount > 0) { this.varListCount--; } else if (this.varListCount < 0) { this.varListCount++; }
+                if (this.varListCount > 0) {
+                    this.varListCount--;
+                } else if (this.varListCount < 0) {
+                    this.varListCount++;
+                }
 
                 // Write ; or ,
                 if (this.varListCount < 0) {
@@ -726,9 +856,6 @@ module TypeScript {
 
                 if (!isInterfaceMember) {
 
-                    this.pushFunc(funcDecl);
-                    
-
                     this.emitDeclFlags(ToDeclFlags(funcDecl.fncFlags), "function");
                     if (id != "__missing" || !funcDecl.name || !funcDecl.name.isMissing()) {
                         /*File Write Old*/ // this.declFile.Write(id);
@@ -747,6 +874,8 @@ module TypeScript {
                     }
                 }
             }
+
+            this.pushFunc(funcDecl);
 
             if (!funcDecl.isIndexerMember()) {
                 /*File Write Old*/ // this.declFile.Write("(");
@@ -823,6 +952,8 @@ module TypeScript {
                 // Setter is being used to emit the type info. 
                 return false;
             }
+
+            this.pushGetterSetter(funcDecl);
 
             this.emitDeclarationComments(accessorSymbol);
             this.emitDeclFlags(ToDeclFlags(accessorSymbol.flags), "var");
@@ -1007,6 +1138,7 @@ module TypeScript {
 
             if (moduleDecl.isEnum()) {
                 if (pre) {
+                    this.pushEnum(moduleDecl);
                     this.emitEnumSignature(moduleDecl);
                 }
                 return false;
