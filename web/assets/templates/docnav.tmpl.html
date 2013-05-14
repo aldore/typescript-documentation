@@ -1,0 +1,14 @@
+<ul class="nav nav-list bs-docs-sidenav affix">
+	{{each data}}
+	<li class="dropdown-container closed">
+		<a class="dropdown-header">
+			<i class="icon icon-chevron-right"></i> ${$index}
+		</a>
+		<ul class="dropdown-container-body">
+			{{each data[$index]}}
+			<li>${$index}</li>
+			{{/each}}
+		</ul>
+	</li>
+	{{/each}}
+</ul>
