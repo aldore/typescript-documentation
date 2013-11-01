@@ -97,7 +97,11 @@ module TypeScript {
         Getter = 1 << 5,
         Setter = 1 << 6,
         Static = 1 << 7,
-		Inline = 1 << 8
+
+		Inline = 1 << 8,
+        Protected = 1 << 9,
+        Signal = 1 << 10,
+        Slot = 1 << 11
     }
 
     export enum ASTFlags {
@@ -205,6 +209,9 @@ module TypeScript {
         ClassSuperMustBeFirstCallInConstructor = 1 << 15,
         Constant = 1 << 16,
         MustCaptureThis = 1 << 17,
+
+        Protected = 1 << 18,
+        Struct = 1 << 19
     }
 
     export enum FncFlags {
@@ -230,7 +237,11 @@ module TypeScript {
         ClassPropertyMethodExported = 1 << 19,
         HasSuperReferenceInFatArrowFunction = 1 << 20,
         IsPropertyBound = 1 << 21,
-		Inline = 1 << 22
+
+		Inline = 1 << 22,
+        Protected = 1 << 23,
+        Signal = 1 << 24,
+        Slot = 1 << 25
     }
 
     export enum SignatureFlags {

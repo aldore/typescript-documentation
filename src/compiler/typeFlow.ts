@@ -640,6 +640,10 @@ module TypeScript {
         public nullType: Type;
         public voidType: Type;
         public arrayAnyType: Type;
+        
+        public intType: Type;
+        public uintType: Type;
+        public floatType: Type;
 
         public arrayInterfaceType: Type = null;
         public stringInterfaceType: Type = null;
@@ -671,6 +675,10 @@ module TypeScript {
             this.nullType = this.checker.nullType;
             this.voidType = this.checker.voidType;
             this.arrayAnyType = this.checker.makeArrayType(this.anyType);
+
+            this.intType = this.checker.persistentState.intType;
+            this.uintType = this.checker.persistentState.uintType;
+            this.floatType = this.checker.persistentState.floatType;
         }
 
         public initLibs() {
@@ -1302,7 +1310,8 @@ module TypeScript {
             }
             else {
                 unex = <UnaryExpression> this.typeCheckUnaryNumberOperator(ast);
-                if (unex.operand.type != this.checker.numberType && unex.operand.type != this.checker.anyType && !(unex.operand.type.typeFlags & TypeFlags.IsEnum)) {
+                if (/*unex.operand.type != this.checker.numberType*/
+                    !unex.operand.type.isNumber() && unex.operand.type != this.checker.anyType && !(unex.operand.type.typeFlags & TypeFlags.IsEnum)) {
                     this.checker.errorReporter.simpleError(ast, "'++' and '--' may only be applied to operands of type 'number' or 'any'");
                 }
             }
@@ -1335,14 +1344,24 @@ module TypeScript {
             else if (leftType == this.anyType) {
                 if ((rightType == this.anyType) ||
                     (rightType == this.doubleType) ||
-                    (rightType == this.booleanType)) {
+                    (rightType == this.booleanType) ||
+                    
+                    (rightType == this.intType) ||
+                    (rightType == this.uintType) ||
+                    (rightType == this.floatType)) {
+                    
                     resultType = this.anyType;
                 }
             }
             else if (rightType == this.anyType) {
                 if ((leftType == this.anyType) ||
                     (leftType == this.doubleType) ||
-                    (leftType == this.booleanType)) {
+                    (leftType == this.booleanType) ||
+                    
+                    (leftType == this.intType) ||
+                    (leftType == this.uintType) ||
+                    (leftType == this.floatType)) {
+
                     resultType = this.anyType;
                 }
             }
@@ -1397,7 +1416,7 @@ module TypeScript {
                 if (leftType == this.checker.stringType || rightType == this.checker.stringType) {
                     binex.type = this.checker.stringType;
                 }
-                else if (leftType == this.checker.numberType && rightType == this.checker.numberType) {
+                else if (leftType.isNumber()/* == this.checker.numberType*/ && rightType.isNumber()/* == this.checker.numberType*/) {
                     binex.type = this.checker.numberType;
                 }
                 else if (this.checker.sourceIsSubtypeOfTarget(leftType, this.checker.numberType) && this.checker.sourceIsSubtypeOfTarget(rightType, this.checker.numberType)) {
@@ -1413,7 +1432,7 @@ module TypeScript {
                 }
             }
             else {
-                if (leftType == this.checker.numberType && rightType == this.checker.numberType) {
+                if (leftType.isNumber()/* == this.checker.numberType*/ && rightType.isNumber()/* == this.checker.numberType*/) {
                     binex.type = this.checker.numberType;
                 }
                 else if (this.checker.sourceIsSubtypeOfTarget(leftType, this.checker.numberType) && this.checker.sourceIsSubtypeOfTarget(rightType, this.checker.numberType)) {
@@ -1453,7 +1472,10 @@ module TypeScript {
                         return binex;
                     }
                 }
-                else if (leftType == this.doubleType) {
+                else if (leftType == this.doubleType ||
+                         leftType == this.intType ||
+                         leftType == this.uintType ||
+                         leftType == this.floatType) {
                     if (this.numberInterfaceType) {
                         leftScope = this.numberInterfaceType.memberScope;
                     }
@@ -1609,7 +1631,7 @@ module TypeScript {
             var indexExprType = binex.operand2.type;
 
             if (objExprType.elementType) { // arrays
-                if (indexExprType == this.checker.anyType || indexExprType == this.checker.numberType || hasFlag(indexExprType.typeFlags, TypeFlags.IsEnum)) {
+                if (indexExprType == this.checker.anyType || indexExprType.isNumber()/* == this.checker.numberType*/ || hasFlag(indexExprType.typeFlags, TypeFlags.IsEnum)) {
                     binex.type = objExprType.elementType;
                 }
                 else if (indexExprType == this.checker.stringType) {
@@ -1625,7 +1647,7 @@ module TypeScript {
                 if (indexExprType == this.checker.anyType ||
                     !((objExprType.index.flags & SignatureFlags.IsStringIndexer) || (objExprType.index.flags & SignatureFlags.IsNumberIndexer)) || // REVIEW: unvalidated type expression
                     ((objExprType.index.flags & SignatureFlags.IsStringIndexer) && indexExprType == this.checker.stringType) ||
-                    ((objExprType.index.flags & SignatureFlags.IsNumberIndexer) && (indexExprType == this.checker.numberType || hasFlag(indexExprType.typeFlags, TypeFlags.IsEnum)))) {
+                    ((objExprType.index.flags & SignatureFlags.IsNumberIndexer) && (indexExprType.isNumber()/* == this.checker.numberType*/ || hasFlag(indexExprType.typeFlags, TypeFlags.IsEnum)))) {
                     var sig = this.resolveOverload(ast, objExprType.index);
                     if (sig) {
                         binex.type = sig.returnType.type;//objExprType.index.signatures[0].returnType.type;
@@ -1644,12 +1666,12 @@ module TypeScript {
             }
             else if ((objExprType == this.checker.anyType ||
                      objExprType == this.checker.stringType ||
-                     objExprType == this.checker.numberType ||
+                     objExprType.isNumber()/* == this.checker.numberType*/ ||
                      objExprType == this.checker.booleanType ||
                      objExprType.isReferenceType()) &&
                      (indexExprType == this.checker.anyType ||
                       indexExprType == this.checker.stringType ||
-                      (indexExprType == this.checker.numberType || hasFlag(indexExprType.typeFlags, TypeFlags.IsEnum)))) { // REVIEW: Do we want to allow indexes of type 'number'?
+                      (indexExprType.isNumber()/* == this.checker.numberType*/ || hasFlag(indexExprType.typeFlags, TypeFlags.IsEnum)))) { // REVIEW: Do we want to allow indexes of type 'number'?
                 binex.type = this.checker.anyType;
             }
             else {
@@ -2475,7 +2497,7 @@ module TypeScript {
                     if (!paramLen || paramLen > 1) {
                         this.checker.errorReporter.simpleError(funcDecl, "Index signatures may take one and only one parameter");
                     }
-                    else if (funcDecl.arguments.members[0].type == this.checker.numberType) {
+                    else if (funcDecl.arguments.members[0].type.isNumber()/* == this.checker.numberType*/) {
                         fnType.index.flags |= SignatureFlags.IsNumberIndexer;
                     }
                     else if (funcDecl.arguments.members[0].type == this.checker.stringType) {
@@ -3463,8 +3485,8 @@ module TypeScript {
                     binex.type = this.checker.anyType;
                 }
             }
-            else if (leftType == this.checker.numberType) {
-                if (rightType == this.checker.numberType) {
+            else if (leftType.isNumber()/* == this.checker.numberType*/) {
+                if (rightType.isNumber()/* == this.checker.numberType*/) {
                     binex.type = this.checker.numberType;
                 }
                 else {

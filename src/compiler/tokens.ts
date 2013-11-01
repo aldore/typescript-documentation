@@ -59,7 +59,6 @@ module TypeScript {
         Return,
         Set,
         Static,
-		Inline,
         String,
         Super,
         Switch,
@@ -72,7 +71,20 @@ module TypeScript {
         Void,
         With,
         While,
+
+        Inline,
+        Signal,
+        Slot,
+        ReadOnly,
+        WriteOnly,
+        Struct,
+        Int,
+        UInt,
+        Float,
+        Long,
+
         Yield,
+
         // Punctuation
         Semicolon,
         OpenParen,
@@ -249,7 +261,6 @@ module TypeScript {
     setTokenInfo(TokenID.Public, Reservation.TypeScriptAndJSFutureStrict, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "public", ErrorRecoverySet.TypeScriptS);
     setTokenInfo(TokenID.Return, Reservation.TypeScriptAndJS, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "return", ErrorRecoverySet.Stmt);
     setTokenInfo(TokenID.Static, Reservation.TypeScriptAndJSFutureStrict, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "static", ErrorRecoverySet.None);
-    setTokenInfo(TokenID.Inline, Reservation.TypeScriptAndJSFutureStrict, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "inline", ErrorRecoverySet.TypeScriptS);
     setTokenInfo(TokenID.String, Reservation.TypeScript, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "string", ErrorRecoverySet.PrimType);
     setTokenInfo(TokenID.Super, Reservation.TypeScriptAndJSFuture, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "super", ErrorRecoverySet.RLit);
     setTokenInfo(TokenID.Switch, Reservation.TypeScriptAndJS, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "switch", ErrorRecoverySet.Stmt);
@@ -263,6 +274,17 @@ module TypeScript {
     setTokenInfo(TokenID.With, Reservation.TypeScriptAndJS, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.With, "with", ErrorRecoverySet.Stmt);
     setTokenInfo(TokenID.While, Reservation.TypeScriptAndJS, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "while", ErrorRecoverySet.While);
     setTokenInfo(TokenID.Yield, Reservation.JavascriptFutureStrict, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "yield", ErrorRecoverySet.None);
+
+    setTokenInfo(TokenID.Inline, Reservation.TypeScriptAndJSFutureStrict, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "inline", ErrorRecoverySet.TypeScriptS);
+    setTokenInfo(TokenID.Signal, Reservation.TypeScriptAndJSFutureStrict, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "signal", ErrorRecoverySet.TypeScriptS);
+    setTokenInfo(TokenID.Slot, Reservation.TypeScriptAndJSFutureStrict, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "slot", ErrorRecoverySet.TypeScriptS);
+    setTokenInfo(TokenID.ReadOnly, Reservation.TypeScriptAndJSFutureStrict, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "readonly", ErrorRecoverySet.TypeScriptS);
+    setTokenInfo(TokenID.WriteOnly, Reservation.TypeScriptAndJSFutureStrict, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "writeonly", ErrorRecoverySet.TypeScriptS);
+    setTokenInfo(TokenID.Struct, Reservation.TypeScriptAndJSFutureStrict, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "struct", ErrorRecoverySet.TypeScriptS);
+    setTokenInfo(TokenID.Int, Reservation.TypeScript, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "int", ErrorRecoverySet.PrimType);
+    setTokenInfo(TokenID.UInt, Reservation.TypeScript, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "uint", ErrorRecoverySet.PrimType);
+    setTokenInfo(TokenID.Float, Reservation.TypeScript, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "float", ErrorRecoverySet.PrimType);
+    setTokenInfo(TokenID.Long, Reservation.TypeScript, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "long", ErrorRecoverySet.PrimType);
 
     setTokenInfo(TokenID.Identifier, Reservation.None, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "identifier", ErrorRecoverySet.ID);
     setTokenInfo(TokenID.NumberLiteral, Reservation.None, OperatorPrecedence.None, NodeType.None, OperatorPrecedence.None, NodeType.None, "numberLiteral", ErrorRecoverySet.Literal);

@@ -1717,6 +1717,12 @@ module TypeScript {
             case TokenID.Bool:
             case TokenID.Number:
             case TokenID.String:
+            
+            case TokenID.Int:
+            case TokenID.UInt:
+            case TokenID.Float:
+            case TokenID.Long:
+
                 return true;
         }
         return false;
@@ -1729,6 +1735,9 @@ module TypeScript {
             case TokenID.Private:
 			case TokenID.Static:
 			case TokenID.Inline:
+            case TokenID.Protected:
+            case TokenID.Signal:
+            case TokenID.Slot:
                 return true;
         }
         return false;

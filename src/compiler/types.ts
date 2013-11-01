@@ -26,6 +26,12 @@ module TypeScript {
         Any = 16,
         Null = 32,
         Undefined = 64,
+        
+        Int = 2 | 128,
+        UInt = 2 | 256,
+        Float = 2 | 512,
+        Long = 2 | 1024
+        
     }
 
     export class MemberName {
@@ -174,9 +180,15 @@ module TypeScript {
         public setHasImplementation() { this.typeFlags |= TypeFlags.HasImplementation; }
 
         public isDouble() { return hasFlag(this.primitiveTypeClass, Primitive.Double); }
+        public isNumber() { return hasFlag(this.primitiveTypeClass, Primitive.Double); }
         public isString() { return hasFlag(this.primitiveTypeClass, Primitive.String); }
         public isBoolean() { return hasFlag(this.primitiveTypeClass, Primitive.Boolean); }
         public isNull() { return hasFlag(this.primitiveTypeClass, Primitive.Null); }
+        
+        public isInt() { return hasFlag(this.primitiveTypeClass, Primitive.Int); }
+        public isUInt() { return hasFlag(this.primitiveTypeClass, Primitive.UInt); }
+        public isFloat() { return hasFlag(this.primitiveTypeClass, Primitive.Float); }
+        public isLong() { return hasFlag(this.primitiveTypeClass, Primitive.Long); }
 
         // REVIEW: No need for this to be a method
         public getTypeName(): string {

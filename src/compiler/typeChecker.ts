@@ -102,6 +102,11 @@ module TypeScript {
         public nullType: Type;
         public undefinedType: Type;
 
+        public intType: Type;
+        public uintType: Type;
+        public floatType: Type;
+        public longType: Type;
+
         // Use this flag to turn resident checking on and off
         public residentTypeCheck: bool = true;
 
@@ -134,6 +139,15 @@ module TypeScript {
             this.anyType = this.enterPrimitive(Primitive.Any, "any");
             this.nullType = this.enterPrimitive(Primitive.Null, "null");
             this.undefinedType = this.enterPrimitive(Primitive.Undefined, "undefined");
+
+            this.intType = this.enterPrimitive(Primitive.Int, "int");
+            this.uintType = this.enterPrimitive(Primitive.UInt, "uint");
+            this.floatType = this.enterPrimitive(Primitive.Float, "float");
+            this.longType = this.enterPrimitive(Primitive.Long, "long");
+
+            //this.importedGlobals.ambientEnclosedTypes.addPublicMember("int", this.intType.symbol);
+            //this.importedGlobals.ambientEnclosedTypes.addPublicMember("uint", this.uintType.symbol);
+            //this.importedGlobals.ambientEnclosedTypes.addPublicMember("float", this.floatType.symbol);
 
             // shared global state is resident
             this.setCollectionMode(TypeCheckCollectionMode.Resident);
@@ -181,11 +195,16 @@ module TypeScript {
             this.globalTypes.add(this.voidType.symbol.name, this.voidType.symbol);
             this.globalTypes.add(this.booleanType.symbol.name, this.booleanType.symbol);
             this.globalTypes.add(this.doubleType.symbol.name, this.doubleType.symbol);
-            this.globalTypes.add("number", this.doubleType.symbol);
+
+            //this.globalTypes.add("number", this.doubleType.symbol);
             this.globalTypes.add(this.stringType.symbol.name, this.stringType.symbol);
             this.globalTypes.add(this.anyType.symbol.name, this.anyType.symbol);
             this.globalTypes.add(this.nullType.symbol.name, this.nullType.symbol);
             this.globalTypes.add(this.undefinedType.symbol.name, this.undefinedType.symbol);
+            
+            this.globalTypes.add(this.intType.symbol.name, this.intType.symbol);
+            this.globalTypes.add(this.uintType.symbol.name, this.uintType.symbol);
+            this.globalTypes.add(this.floatType.symbol.name, this.floatType.symbol);
 
             this.dualGlobalValues.secondaryTable = this.globals;
             this.dualGlobalTypes.secondaryTable = this.globalTypes;
@@ -1608,8 +1627,9 @@ module TypeScript {
 
                 return ret;
             }
-
-            if (t1.primitiveTypeClass != t2.primitiveTypeClass) {
+            
+            if (t1.primitiveTypeClass != t2.primitiveTypeClass && 
+                !(t1.isDouble() && t2.isDouble())) {
                 return false;
             }
 
@@ -1812,10 +1832,10 @@ module TypeScript {
             }
 
             // REVIEW: enum types aren't explicitly covered in the spec
-            if (target == this.numberType && (source.typeFlags & TypeFlags.IsEnum)) {
+            if (target.isNumber()/* == this.numberType*/ && (source.typeFlags & TypeFlags.IsEnum)) {
                 return true;
             }
-            if (source == this.numberType && (target.typeFlags & TypeFlags.IsEnum)) {
+            if (source.isNumber()/* == this.numberType*/ && (target.typeFlags & TypeFlags.IsEnum)) {
                 return true;
             }
             if ((source.typeFlags & TypeFlags.IsEnum) || (target.typeFlags & TypeFlags.IsEnum)) {
@@ -1840,10 +1860,11 @@ module TypeScript {
 
             // this check ensures that we only operate on object types from this point forward,
             // since the checks involving primitives occurred above
-            if (source.primitiveTypeClass != target.primitiveTypeClass) {
+            if (source.primitiveTypeClass != target.primitiveTypeClass &&
+                !(source.isDouble() && target.isDouble())) {
 
                 if (target.primitiveTypeClass == Primitive.None) {
-                    if (source == this.numberType && this.typeFlow.numberInterfaceType) {
+                    if (source.isNumber()/* == this.numberType*/ && this.typeFlow.numberInterfaceType) {
                         source = this.typeFlow.numberInterfaceType;
                     }
                     else if (source == this.stringType && this.typeFlow.stringInterfaceType) {

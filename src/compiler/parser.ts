@@ -829,7 +829,12 @@ module TypeScript {
                 case TokenID.Any:
                 case TokenID.Number:
                 case TokenID.Bool:
-                case TokenID.String: {
+                case TokenID.String:
+
+                case TokenID.Int:
+                case TokenID.UInt:
+                case TokenID.Float:
+                case TokenID.Long: {
                     var text = tokenTable[this.currentToken.tokenId].text;
                     var predefinedIdentifier = new Identifier(text);
                     predefinedIdentifier.minChar = minChar;
@@ -1160,6 +1165,13 @@ module TypeScript {
                 }
                 if (this.currentToken.tokenId == TokenID.Public) {
                     argFlags |= (VarFlags.Public | VarFlags.Property);
+
+                    if (this.currentClassDefinition) {
+                        this.currentClassDefinition.varFlags |= VarFlags.ClassSuperMustBeFirstCallInConstructor;
+                    }
+                }
+                else if (this.currentToken.tokenId == TokenID.Protected) {
+                    argFlags |= (VarFlags.Protected | VarFlags.Property);
 
                     if (this.currentClassDefinition) {
                         this.currentClassDefinition.varFlags |= VarFlags.ClassSuperMustBeFirstCallInConstructor;
@@ -1616,6 +1628,7 @@ module TypeScript {
             var svAmbientClass = this.ambientClass;
             this.ambientClass = classIsMarkedAsAmbient;
 
+            var isStruct = (this.currentToken.tokenId == TokenID.Struct);
             // grab the class's name
             this.currentToken = this.scanner.scan();
             var name: Identifier = null;
@@ -1663,6 +1676,10 @@ module TypeScript {
             }
 
             classDecl.varFlags |= VarFlags.Class;
+
+            if (isStruct) {
+                classDecl.varFlags |= VarFlags.Struct;
+            }
 
             this.ambientClass = svAmbientClass;
             classDecl.leftCurlyCount = this.scanner.leftCurlyCount - leftCurlyCount;
@@ -1721,6 +1738,15 @@ module TypeScript {
                 else if (this.currentToken.tokenId == TokenID.Inline) {
  
                 	modifiers |= Modifiers.Inline;
+                }
+                else if (this.currentToken.tokenId == TokenID.Protected) {
+                	modifiers |= Modifiers.Protected;
+                }
+                else if (this.currentToken.tokenId == TokenID.Signal) {
+                	modifiers |= Modifiers.Signal;
+                }
+                else if (this.currentToken.tokenId == TokenID.Slot) {
+                	modifiers |= Modifiers.Slot;
                 }
 
                 else if (this.currentToken.tokenId == TokenID.Static) {
@@ -1919,7 +1945,6 @@ module TypeScript {
         }
 
         private parseClassMemberVariableDeclaration(text: Identifier, minChar: number, isDeclaredInConstructor: bool, errorRecoverySet: ErrorRecoverySet, modifiers: Modifiers) {
-
             var varDecl = new VarDecl(text, this.nestingLevel);
             varDecl.minChar = minChar;
             var isStatic = false;
@@ -1977,6 +2002,10 @@ module TypeScript {
             }
             else {
                 varDecl.varFlags |= VarFlags.Public;
+            }
+
+            if (modifiers & Modifiers.Protected) {
+                varDecl.varFlags |= VarFlags.Protected;
             }
 
             varDecl.varFlags |= VarFlags.Property;
@@ -2037,6 +2066,18 @@ module TypeScript {
 
             if (isStatic) {
                 funcDecl.fncFlags |= FncFlags.Static;
+            }
+
+            if (modifiers & Modifiers.Protected) {
+                funcDecl.fncFlags |= FncFlags.Protected;
+            }
+
+            if (modifiers & modifiers.Signal) {
+                funcDecl.fncFlags |= FncFlags.Signal;
+            }
+            
+            if (modifiers & modifiers.Slot) {
+                funcDecl.fncFlags |= FncFlags.Slot;
             }
 
             if (isAccessor) {
@@ -2191,6 +2232,20 @@ module TypeScript {
             var wasAccessorID = this.prevIDTok != null;
             var isAccessor = hasFlag(modifiers, Modifiers.Getter) || hasFlag(modifiers, Modifiers.Setter);
 
+            if (this.currentToken.tokenId == TokenID.Signal) {
+                modifiers |= Modifiers.Signal;
+                this.currentToken = this.scanner.scan();
+
+                return this.parsePropertyDeclaration(errorRecoverySet, modifiers, requireSignature, isStatic, unnamedAmbientFunctionOk);
+            }
+
+            if (this.currentToken.tokenId == TokenID.Slot) {
+                modifiers |= Modifiers.Slot;
+                this.currentToken = this.scanner.scan();
+
+                return this.parsePropertyDeclaration(errorRecoverySet, modifiers, requireSignature, isStatic, unnamedAmbientFunctionOk);
+            }
+            
             if (this.parsingDeclareFile || this.ambientModule || hasFlag(modifiers, Modifiers.Ambient)) {
                 requireSignature = true;
             }
@@ -2321,6 +2376,15 @@ module TypeScript {
                 if (isStatic) {
                     funcDecl.fncFlags |= FncFlags.Static;
                 }
+
+                if (modifiers & Modifiers.Signal) {
+                    funcDecl.fncFlags |= FncFlags.Signal;
+                }
+                
+                if (modifiers & Modifiers.Slot) {
+                    funcDecl.fncFlags |= FncFlags.Slot;
+                }
+
                 if (this.parsingDeclareFile || hasFlag(modifiers, Modifiers.Ambient)) {
                     funcDecl.fncFlags |= FncFlags.Ambient;
                 }
@@ -3716,6 +3780,7 @@ module TypeScript {
                         modifiers |= Modifiers.Ambient;
                         this.currentToken = this.scanner.scan();
                         break;
+                    case TokenID.Struct:
                     case TokenID.Class:
                         if ((allowedElements & AllowedElements.ClassDeclarations) == AllowedElements.None) {
                             this.reportParseError("class not allowed in this context");
@@ -4306,6 +4371,7 @@ module TypeScript {
                     (noLeadingCase && ((this.currentToken.tokenId == TokenID.Case) || (this.currentToken.tokenId == TokenID.Default))) ||
                     (innerStmts && (this.currentToken.tokenId == TokenID.Export)) ||
                     (classNope && (this.currentToken.tokenId == TokenID.Class)) ||
+                    (classNope && (this.currentToken.tokenId == TokenID.Struct)) ||
                     (this.currentToken.tokenId == TokenID.EndOfFile)) {
                     statements.limChar = limChar;
                     if (statements.members.length == 0) {
