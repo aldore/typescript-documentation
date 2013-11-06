@@ -1001,7 +1001,9 @@ module TypeScript {
 
         public isPrivate() { return hasFlag(this.varFlags, VarFlags.Private); }
         public isPublic() { return hasFlag(this.varFlags, VarFlags.Public); }
+        public isProtected() { return hasFlag(this.varFlags, VarFlags.Protected); }
         public isProperty() { return hasFlag(this.varFlags, VarFlags.Property); }
+        public isStruct() { return hasFlag(this.varFlags, VarFlags.Struct); }
 
         public typeCheck(typeFlow: TypeFlow) {
             return typeFlow.typeCheckBoundDecl(this);
@@ -1193,7 +1195,11 @@ module TypeScript {
         public isPrivate() { return hasFlag(this.fncFlags, FncFlags.Private); }
         public isPublic() { return hasFlag(this.fncFlags, FncFlags.Public); }
         public isStatic() { return hasFlag(this.fncFlags, FncFlags.Static); }
+
         public isInline() { return hasFlag(this.fncFlags, FncFlags.Inline); }
+        public isProtected() { return hasFlag(this.fncFlags, FncFlags.Protected); }
+        public isSignal() { return hasFlag(this.fncFlags, FncFlags.Signal); }
+        public isSlot() { return hasFlag(this.fncFlags, FncFlags.Slot); }
 
 
         public treeViewLabel() {

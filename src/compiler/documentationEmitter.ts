@@ -114,6 +114,9 @@ module TypeScript {
                 if (varDecl.isStatic()) {
                     oCurrentContext["variables"]["static"] = oCurrentContext["variables"]["static"] || {};
                     oCurrentContext["variables"]["static"][varDecl.id.text] = oVariable;
+                } else if (varDecl.isProtected()) {
+                    oCurrentContext["variables"]["protected"] = oCurrentContext["variables"]["protected"] || {};
+                    oCurrentContext["variables"]["protected"][varDecl.id.text] = oVariable;
                 } else if (varDecl.isPrivate()) {
                     oCurrentContext["variables"]["private"] = oCurrentContext["variables"]["private"] || {};
                     oCurrentContext["variables"]["private"][varDecl.id.text] = oVariable;
@@ -287,6 +290,14 @@ module TypeScript {
                     var argDecl = <ArgDecl>funcDecl.arguments.members[i];
                     this.pushFunctionArg(oFunction, argDecl, funcDecl);
                 }
+            }
+
+            if(funcDecl.isSignal()){
+                oFunction["isSignal"] = true;
+            }
+
+            if(funcDecl.isSlot()){
+                oFunction["isSlot"] = true;
             }
 
             if (funcDecl.variableArgList) {
