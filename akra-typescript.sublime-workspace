@@ -4,6 +4,142 @@
 		"selected_items":
 		[
 			[
+				"slides",
+				"slidesWrap"
+			],
+			[
+				"sli",
+				"slidesWrap"
+			],
+			[
+				"iS",
+				"iSliderWidth"
+			],
+			[
+				"template",
+				"template-sprite"
+			],
+			[
+				"templat",
+				"template-sprite"
+			],
+			[
+				"preg",
+				"preg_replace"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"ta",
+				"table-row"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"get",
+				"getInfo"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"oD",
+				"oDocTmp"
+			],
+			[
+				"json",
+				"json_decode"
+			],
+			[
+				"get_cl",
+				"get_class_methods"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"show",
+				"show_title"
+			],
+			[
+				"inc",
+				"incl1	include_once …"
+			],
+			[
+				"preg_replace",
+				"preg_replace_callback"
+			],
+			[
+				"d",
+				"disc"
+			],
+			[
+				"t",
+				"_total"
+			],
+			[
+				"C",
+				"CLEAR_ALL"
+			],
+			[
+				"interf",
+				"interfaceDecl"
+			],
+			[
+				"pus",
+				"pushInterface"
+			],
+			[
+				"moduleDecl",
+				"moduleDecl"
+			],
+			[
+				"No",
+				"NodeType"
+			],
+			[
+				"func",
+				"funcDecl"
+			],
+			[
+				"pu",
+				"pushFunc"
+			],
+			[
+				"push",
+				"pushTypeDef"
+			],
+			[
+				"var",
+				"varDecl"
+			],
+			[
 				"writeFile",
 				"writeFileSync"
 			],
@@ -14,14 +150,6 @@
 			[
 				"prepr",
 				"preprocess"
-			],
-			[
-				"func",
-				"functions"
-			],
-			[
-				"var",
-				"variables"
 			],
 			[
 				"oC",
@@ -126,10 +254,6 @@
 			[
 				"pB",
 				"pBox2"
-			],
-			[
-				"iS",
-				"iStartIndex"
 			],
 			[
 				"IRe",
@@ -268,10 +392,6 @@
 				"pointer"
 			],
 			[
-				"text",
-				"text-decoration"
-			],
-			[
 				"mar",
 				"margin"
 			],
@@ -384,10 +504,6 @@
 				"__ajaxmart_product_category"
 			],
 			[
-				"padding",
-				"padding-right"
-			],
-			[
 				"_p",
 				"_pCloseBtn"
 			],
@@ -398,127 +514,43 @@
 			[
 				"D",
 				"DragnDrop"
-			],
-			[
-				"border",
-				"border-radius"
-			],
-			[
-				"font",
-				"font-weight"
-			],
-			[
-				"or",
-				"orderId"
-			],
-			[
-				"json",
-				"json_encode"
-			],
-			[
-				"de",
-				"deliveryInfo"
-			],
-			[
-				"margin",
-				"margin-bottom"
-			],
-			[
-				"borde",
-				"border-collapse"
-			],
-			[
-				"_fRa",
-				"_fRangeStart"
-			],
-			[
-				"_update",
-				"_updateValue"
-			],
-			[
-				"_f",
-				"_fDelta"
-			],
-			[
-				"_fR",
-				"_fRangeStop"
-			],
-			[
-				"va",
-				"value"
-			],
-			[
-				"mouseStig",
-				"mouseStigIter"
-			],
-			[
-				"mouse",
-				"mouseUp"
-			],
-			[
-				"_",
-				"_fRangeStop"
-			],
-			[
-				"pC",
-				"pChild"
-			],
-			[
-				"find",
-				"findChild"
-			],
-			[
-				"getC",
-				"getChildren"
-			],
-			[
-				"pCh",
-				"pChildren"
-			],
-			[
-				"get",
-				"getChildren"
-			],
-			[
-				"_b",
-				"_bShowValue"
-			],
-			[
-				"_u",
-				"_updateValue"
-			],
-			[
-				"F",
-				"fRange"
-			],
-			[
-				"Graph",
-				"GraphNode"
-			],
-			[
-				"width",
-				"width"
-			],
-			[
-				"pPa",
-				"pParentDom"
-			],
-			[
-				"sc",
-				"scroll"
-			],
-			[
-				"parent",
-				"parentNode"
-			],
-			[
-				"scroll",
-				"scroll-window"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "/C/Users/Никита/AppData/Local/Temp/scp53016/domains/x-orange.ru/modules/mod_topcontacts/js/topcontacts.js",
+			"settings":
+			{
+				"buffer_size": 4672,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Никита/AppData/Local/Temp/scp08817/domains/x-orange.ru/modules/mod_topcontacts/mailer_email.php",
+			"settings":
+			{
+				"buffer_size": 1026,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Никита/AppData/Local/Temp/scp03840/domains/x-orange.ru/modules/mod_topcontacts/mailer_phone.php",
+			"settings":
+			{
+				"buffer_size": 1029,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Никита/AppData/Local/Temp/scp54135/domains/x-orange.ru/modules/mod_topcontacts/tmpl/default.php",
+			"settings":
+			{
+				"buffer_size": 4097,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -526,6 +558,10 @@
 		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
 			[
 				"pa",
 				"Package Control: Install Package"
@@ -572,134 +608,134 @@
 	},
 	"file_history":
 	[
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/typecheck/pullDeclarationEmitter.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/declarationEmitter.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/typescript.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/flags.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/documentationEmitter.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/nodeTypes.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/ast.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/tests/akra-test/example.d.ts",
-		"/C/WebServers/home/akra/www/akra-engine-core/src2/build/make.js",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/emitter.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/astWalkerCallback.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/astWalker.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/tests/akra-test/example.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/symbols.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/types.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/typecheck/pullDocumentationEmitter.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/tests/akra-test/akra.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/akra-typescript.sublime-project",
-		"/C/WebServers/home/akra/www/typescript-documentation/.gitignore",
-		"/C/WebServers/home/akra/www/akra-engine-core/src2/bin/akra.ts",
-		"/C/WebServers/home/akra/www/akra-engine-core/src2/bin/akra.js",
-		"/C/WebServers/home/akra/www/akra-engine-core/src2/bin/akra.d.ts",
-		"/C/WebServers/home/akra/www/typescript-documentation/tests/akra-test/some.js",
-		"/C/WebServers/home/akra/www/typescript-documentation/built/local/tsc.js",
-		"/C/WebServers/home/akra/www/typescript-documentation/tests/akra-test/example.js",
-		"/C/WebServers/home/akra/www/typescript-documentation/src/compiler/Syntax/tests/emitter/ecmascript5/ModuleDeclaration/ModuleDeclaration10.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/tsc.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/emitter.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/typecheck/pullSemanticInfo.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/typecheck/pullDecls.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/declarationEmitter.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/documentationEmitter.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/astWalkerCallback.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/astWalker.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/io.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/typecheck/pullDocumentationEmitter.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/typescript.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/ast.ts",
-		"/Z/home/akra/www/typescript-documentation/built/local/tsc.js",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/typecheck/pullDeclarationEmitter.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/Syntax/prototype.js",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/Text/TextUtilities.ts",
-		"/Z/home/akra/www/typescript-documentation/src/compiler/Text/TextFactory.ts",
-		"/C/Users/Никита/Desktop/Проги и дрова/Adobe Photoshop CS5 Extended (Crack + Instructions)/main resource/hosts",
-		"/C/Windows/System32/drivers/etc/hosts",
-		"/E/Users/Никита/Documents/GitHub/akra-engine-core/akra-typescript.sublime-project",
-		"/E/Users/Никита/Documents/GitHub/akra-engine-core/akra-typescript.sublime-workspace",
-		"/C/Users/Никита/Documents/GitHub/typescript-documentation/tests/akra-test/example.d.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/terrain/TerrainROAM.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/terrain/TerrainSection.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/ITerrainSection.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/core/pool/resources/Collada.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/core/Engine.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/core/pool/ResourcePoolManager.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/fx/Effect.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/fx/EffectErrors.ts",
-		"/W/home/akra/www/akra-engine-core/src2/tests/common/terrain/createTerrain.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/terrain/TerrainSectionROAM.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/render/Viewport.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/scene/Scene3d.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IScene3d.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/ISceneNode.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IScene.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/scene/SceneNode.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/ITerrainSectionROAM.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/terrain/Terrain.ts",
-		"/C/Users/Никита/Documents/GitHub/typescript-documentation/.gitignore",
-		"/W/home/akra/www/akra-engine-core/src2/tests/common/terrain/~tmp.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IEntity.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/INode.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IEngine.ts",
-		"/W/home/akra/www/akra-engine-core/src/objects/TerrainSystem.js",
-		"/W/home/akra/www/akra-engine-core/src2/inc/geometry/Rect3d.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/core/pool/resources/Img.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/ICamera.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IFrustum.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/ISceneObject.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/scene/SceneObject.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IImg.ts",
-		"/W/home/akra/www/akra-engine-core/src/objects/TerrainSystemROAM.js",
-		"/W/home/akra/www/akra-engine-core/src2/inc/scene/OcTree.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/geometry/Box.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/ITerrain.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/ITerrainROAM.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/render/RenderableObject.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IVertexData.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IVertexDeclaration.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IVertexElement.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/render/RenderData.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/data/VertexDeclaration.ts",
-		"/W/home/akra/www/akra-engine-general/demos/terrainROAM.js",
-		"/W/home/akra/www/akra-engine-core/src2/inc/terrain/MegaTexture.ts",
-		"/W/home/akra/www/akra-engine-core/src2/data/effects/mesh_texture.afx",
-		"/W/home/akra/www/akra-engine-core/src2/data/effects/terrain.afx",
-		"/W/home/akra/www/akra-engine-core/src2/tests/common/fx/test-example.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/core/pool/resources/RenderMethod.ts",
-		"/W/home/akra/www/akra-engine-general/demos/geom.js",
-		"/W/home/akra/www/akra-engine-general/demos/terrain.html",
-		"/W/home/akra/www/akra-engine-core/src2/inc/fx/FunctionInstruction.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/fx/TypeInstruction.ts",
-		"/W/home/akra/www/akra-engine-core/src2/data/effects/mesh_geometry.afx",
-		"/C/WebServers/home/2kalyana.lan/www/components/com_kfm/assets/js/kfm.js",
-		"/C/WebServers/home/2kalyana.lan/www/modules/mod_kfm/js/kfm.js",
-		"/C/WebServers/home/2kalyana.lan/www/components/com_kfm/views/kfm/tmpl/default.php",
-		"/C/WebServers/home/2kalyana.lan/www/modules/mod_kfm/templates/recepiesList.tmpl.html",
-		"/C/Users/Никита/Desktop/pres inet/assets/typedtext.css",
+		"/C/Users/Никита/AppData/Local/Temp/scp03840/domains/x-orange.ru/modules/mod_topcontacts/mailer_phone.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp56287/domains/2kalyana.aldore.ru/modules/mod_orderphonecall/js/modOrderphonecall.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp02097/domains/2kalyana.aldore.ru/modules/mod_orderphonecall/mailer_phone.php",
 		"/C/Users/Никита/Downloads/nivo-slider3.2/nivo-slider/jquery.nivo.slider.js",
-		"/C/Users/Никита/Desktop/typescript-documentation/tests/baselines/prototyping/reference/assignmentCompatBug2.commonjs.js",
-		"/C/Users/Никита/Desktop/pres inet/assets/template.css",
+		"/Z/home/2kalyana.lan/www/modules/mod_countdown/js/jquery.divSlider.js",
+		"/Z/home/2kalyana.lan/www/modules/mod_countdown/js/modCountdown.js",
+		"/Z/home/2kalyana.lan/www/modules/mod_countdown/tmpl/default.php",
 		"/C/Users/Никита/Downloads/nivo-slider3.2/nivo-slider/demo/demo.html",
-		"/C/Users/Никита/Desktop/pres inet/assets/main.js",
-		"/C/Users/Никита/Desktop/pres inet/index.html",
-		"/C/Users/Никита/Desktop/typescript-documentation/tests/baselines/local/aliasBug.amd.js",
-		"/C/Users/Никита/Desktop/typescript-documentation/tests/cases/projects/VisibilityOfCrosssModuleTypeUsage/reference/amd/fs.js",
-		"/C/Users/Никита/Desktop/typescript-documentation/tests/cases/unittests/services/baselines/reference/optionsParser.str-types.json",
-		"/C/Users/Никита/Desktop/typescript-documentation/tests/cases/unittests/services/baselines/reference/optionsParser.str-signatures.json",
-		"/C/Users/Никита/Desktop/typescript-documentation/tests/cases/unittests/services/baselines/reference/getCompletionsAtPosition1.str-signatures.json",
-		"/C/Users/Никита/Desktop/typescript-documentation/tests/cases/unittests/services/baselines/baseline-accept.ts",
-		"/C/Users/Никита/Desktop/typescript-documentation/tests/cases/unittests/services/baselines/baseline-create.ts",
-		"/C/Users/Никита/Desktop/typescript-documentation/tests/cases/compiler/aliasBug.ts",
-		"/C/Users/Никита/Desktop/typescript-documentation/.gitignore",
-		"/C/Users/Никита/Desktop/typescript-documentation/tests/runners/fourslash/fsrunner.ts",
-		"/C/Users/Никита/Desktop/result video/frames/dublicate.js",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IMat3.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IMegaTexture.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/IPixelBox.ts",
-		"/C/Users/Никита/Documents/GitHub/akra-engine-core/src2/inc/PixelFormat.ts",
-		"/W/home/akra/www/akra-engine-core/src2/inc/util/testutils.ts"
+		"/C/Users/Никита/Downloads/nivo-slider3.2/nivo-slider/jquery.nivo.slider1.js",
+		"/C/Users/Никита/AppData/Local/Temp/_tc_/default.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp50073/domains/2kalyana.aldore.ru/modules/mod_countdown/js/jquery.divSlider.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp50273/domains/2kalyana.aldore.ru/modules/mod_countdown/js/jquery.countdown.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp50041/domains/2kalyana.aldore.ru/modules/mod_countdown/js/modCountdown.js",
+		"/C/Users/Никита/AppData/Local/Temp/_tc_/index.php",
+		"/C/Users/Никита/AppData/Local/Temp/_tc/ajaxmart.php",
+		"/C/Users/Никита/AppData/Local/Temp/_tc/view.html.php",
+		"/C/Users/Никита/AppData/Local/Temp/_tc/helper.php",
+		"/C/Users/Никита/AppData/Local/Temp/_tc/.htaccess",
+		"/Z/home/2kalyana.lan/www/slider/index.html",
+		"/Z/home/2kalyana.lan/www/templates/ajaxmart/css/main.css",
+		"/Z/home/2kalyana.lan/www/modules/mod_countdown/css/template.css",
+		"/Z/home/2kalyana.lan/www/modules/mod_countdown/css/divSlider.css",
+		"/Z/home/2kalyana.lan/www/slider/slider.js",
+		"/Z/home/documentation3.lan/www/documentation/js/main.js",
+		"/Z/home/documentation3.lan/www/documentation/js/templating.js",
+		"/Z/home/documentation3.lan/www/documentation/templates/all.tmpl.html",
+		"/Z/home/2kalyana.lan/www/slider/slider.css",
+		"/C/Users/Никита/Desktop/slider/slider.js",
+		"/C/Users/Никита/Desktop/slider/slider.css",
+		"/C/Users/Никита/Desktop/slider/index.html",
+		"/Z/home/documentation3.lan/www/documentation/templates/all.js",
+		"/C/Users/Никита/SleepTracker/Logs/Main.log",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/Никита/AppData/Local/Temp/scp38881/srv/www/htdocs/new/templates/odserve/css/style.less",
+		"/C/Users/Никита/AppData/Local/Temp/scp00188/srv/www/htdocs/new/templates/odserve/index.php",
+		"/Z/home/2kalyana.lan/www/templates/ajaxmart/index.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp27183/srv/www/htdocs/new/templates/odserve/error.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp48431/srv/www/htdocs/new/templates/odserve/js/slider-start.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp50676/srv/www/htdocs/new/templates/odserve/js/jquery.min.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp53550/srv/www/htdocs/new/plugins/system/jch_optimize/jch_optimize.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp47433/srv/www/htdocs/new/templates/odserve/css/nivo-slider/default.css",
+		"/C/Users/Никита/AppData/Local/Temp/scp51630/srv/www/htdocs/new/templates/odserve/css/default.css",
+		"/C/Users/Никита/AppData/Local/Temp/scp12534/srv/www/htdocs/new/templates/odserve/css/style.css",
+		"/C/Users/Никита/AppData/Local/Temp/scp39425/srv/www/htdocs/new/templates/odserve/css/template.css",
+		"/C/Users/Никита/AppData/Local/Temp/scp37578/srv/www/htdocs/new/templates/odserve/css/fonts.css",
+		"/C/Users/Никита/AppData/Local/Temp/scp38945/srv/www/htdocs/new/templates/odserve/css/nivo-slider.css",
+		"/C/Users/Никита/AppData/Local/Temp/scp36586/srv/www/htdocs/new/templates/odserve/css/bootstrap.min.css",
+		"/C/Users/Никита/AppData/Local/Temp/scp39946/srv/www/htdocs/new/plugins/content/scriptstohead/scriptstohead.php",
+		"/C/Users/Никита/Downloads/scriptstohead/scriptstohead.xml",
+		"/C/Users/Никита/Downloads/scriptstohead/boxplus.xml",
+		"/C/Users/Никита/Downloads/scriptstohead/scriptstohead.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp18956/srv/www/htdocs/new/plugins/content/boxplus/boxplus.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp36554/srv/www/htdocs/new/templates/odserve/css/jscss.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp34012/srv/www/htdocs/new/plugins/system/jch_optimize/libs/jscss.php",
+		"/Z/home/akra/www/typescript-documentation/src/compiler/documentationEmitter.ts",
+		"/C/Users/Никита/AppData/Local/Temp/scp07591/srv/www/htdocs/new/templates/odserve/html/com_content/category/akrablog.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp04468/srv/www/htdocs/new/modules/mod_articles_popular/tmpl/default.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp22676/srv/www/htdocs/new/templates/odserve/index.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp42884/srv/www/htdocs/new/templates/odserve/html/com_content/category/akrablog_item.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp48612/srv/www/htdocs/new/plugins/editors/codemirror/codemirror.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp06375/srv/www/htdocs/new/cont/mail_licence.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp48644/srv/www/htdocs/new/cont/mail_licence.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp10624/srv/www/htdocs/new/templates/odserve/css/nivo-slider/default.css",
+		"/Z/usr/local/apache/conf/httpd.conf",
+		"/C/Users/Никита/AppData/Local/Temp/scp05220/srv/www/htdocs/new/templates/odserve/js/jquery.nivo.slider.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp30631/srv/www/htdocs/new/templates/odserve/css/style.less",
+		"/C/Users/Никита/AppData/Local/Temp/scp56281/srv/www/htdocs/new/administrator/templates/isis/css/template.css",
+		"/Z/home/documentation3.lan/www/documentation/index.html",
+		"/C/Users/Никита/AppData/Local/Temp/scp28899/srv/www/htdocs/new/libraries/joomla/document/html/renderer/head.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp46037/srv/www/htdocs/new/templates/odserve/js/template.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp52340/srv/www/htdocs/administrator/components/com_content/views/element/view.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp53503/srv/www/htdocs/new/plugins/content/boxplus/js/boxplus.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp49464/srv/www/htdocs/new/media/system/js/mootools-core-uncompressed.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp02032/srv/www/htdocs/new/configuration.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp22647/etc/sysconfig/apache2",
+		"/C/Users/Никита/AppData/Local/Temp/scp10692/srv/www/htdocs/new/templates/beez3/index.php",
+		"/C/Users/Никита/Downloads/plg_boxplus-0.9.3.5/js/jsonp.mootools.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp08585/srv/www/htdocs/new/administrator/components/com_dlstat4joomla/views/items/tmpl/default.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp48100/srv/www/htdocs/new/layouts/joomla/content/info_block/modify_date.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp18871/srv/www/htdocs/new/layouts/joomla/content/blog_style_default_item_title.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp40495/srv/www/htdocs/new/templates/odserve/html/com_content/category/blog_item.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp01685/srv/www/htdocs/new/components/com_content/views/category/view.html.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp37040/srv/www/htdocs/new/components/com_content/models/category.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp34954/srv/www/htdocs/new/templates/odserve/html/com_content/category/blog.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp05165/srv/www/htdocs/new/templates/odserve/html/layouts/joomla/content/info_block/block.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp48557/srv/www/htdocs/new/modules/mod_articles_popular/helper.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp47203/srv/www/htdocs/new/administrator/components/com_dlstat4joomla/dlstat4joomla.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp59525/srv/www/htdocs/new/administrator/components/com_dlstat4joomla/views/items/view.html.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp00357/srv/www/htdocs/new/administrator/components/com_dlstat4joomla/models/items.php",
+		"/C/Users/Никита/Downloads/plg_boxplus-0.9.3.5/boxplus.php",
+		"/C/Users/Никита/Downloads/plg_boxplus-0.9.3.5/js/boxplus.js",
+		"/C/Users/Никита/AppData/Local/Temp/Rar$DI00.841/shadowbox.xml",
+		"/C/Users/Никита/AppData/Local/Temp/scp31352/srv/www/htdocs/new/components/com_content/views/article/tmpl/default.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp38551/srv/www/htdocs/new/templates/odserve/html/com_content/article/default.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp58830/srv/www/htdocs/new/administrator/components/com_j2xml/j2xml.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp55855/srv/www/htdocs/new/administrator/components/com_dlstat4joomla/controllers/items.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp56815/srv/www/htdocs/new/administrator/components/com_j2xml/controller.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp56974/srv/www/htdocs/new/administrator/components/com_akeeba/controllers/backup.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp54440/srv/www/htdocs/new/administrator/components/com_akeeba/akeeba.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp55727/srv/www/htdocs/new/administrator/components/com_akeeba/controllers/browser.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp48954/srv/www/htdocs/new/administrator/components/com_messages/messages.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp48186/srv/www/htdocs/new/administrator/components/com_contact/contact.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp47066/srv/www/htdocs/new/administrator/components/com_joomlaupdate/joomlaupdate.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp48720/srv/www/htdocs/new/cont/main.js",
+		"/C/Users/Никита/AppData/Local/Temp/scp06617/srv/www/htdocs/new/cont/mail.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp20020/srv/www/htdocs/new/templates/odserve/css/bootstrap.min.css",
+		"/C/Users/Никита/AppData/Local/Temp/scp30840/srv/www/htdocs/new/components/com_content/views/category/tmpl/default_articles.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp07233/srv/www/htdocs/new/templates/odserve/html/com_content/category/akrablog.xml",
+		"/C/Users/Никита/AppData/Local/Temp/scp39351/srv/www/htdocs/new/templates/odserve/html/pagination.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp46796/srv/www/htdocs/new/layouts/joomla/content/info_block/author.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp18646/srv/www/htdocs/new/templates/odserve/html/layouts/joomla/content/blog_style_default_item_title.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp35320/srv/www/htdocs/new/templates/odserve/templateDetails.xml",
+		"/C/Users/Никита/AppData/Local/Temp/scp11900/srv/www/htdocs/new/components/com_content/views/category/tmpl/blog.xml",
+		"/C/Users/Никита/AppData/Local/Temp/scp27098/srv/www/htdocs/new/templates/odserve/error.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp20091/srv/www/htdocs/new/administrator/components/com_templates/controllers/source.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp10748/srv/www/htdocs/new/components/com_content/views/category/metadata.xml",
+		"/C/Users/Никита/AppData/Local/Temp/scp07010/srv/www/htdocs/new/templates/odserve/html/com_content/category/akrablog.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp58063/srv/www/htdocs/new/layouts/joomla/content/info_block/publish_date.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp45870/srv/www/htdocs/new/modules/mod_articles_popular/mod_articles_popular.xml",
+		"/C/Users/Никита/AppData/Local/Temp/scp32736/srv/www/htdocs/new/templates/odserve/error.bckp.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp46837/srv/www/htdocs/new/layouts/joomla/content/info_block/block.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp45693/srv/www/htdocs/new/components/com_content/helpers/category.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp39359/srv/www/htdocs/new/components/com_content/views/category/tmpl/blog_item.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp53358/srv/www/htdocs/templates/akra/index.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp24392/srv/www/htdocs/new/administrator/components/com_templates/views/template/view.html.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp25552/srv/www/htdocs/new/administrator/components/com_templates/models/template.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp25640/srv/www/htdocs/new/administrator/components/com_templates/views/template/tmpl/default.php",
+		"/C/Users/Никита/AppData/Local/Temp/scp27948/srv/www/htdocs/new/components/com_content/views/category/tmpl/blog.php"
 	],
 	"find":
 	{
@@ -711,6 +747,8 @@
 		"where_history":
 		[
 			"",
+			"C:\\WebServers\\home\\akra\\www\\typescript-documentation\\tests\\akra-test\\definitions",
+			"",
 			"`",
 			""
 		]
@@ -720,134 +758,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"pOptions.pathToTemp",
-			"declaration",
-			"preprocess",
-			"declaration",
-			"direct",
-			"functions",
-			"emitBaseList",
-			"type ",
-			"Type ",
-			"Type",
-			"getTyp",
-			"oCurrentContext",
-			"debugger;",
-			"getWalker",
-			"AstWalkerWithDetailCallback",
-			".walk(",
-			"AstWalkerDetailCallback",
-			"moduleDeclList",
-			"ModuleElement",
-			"moduledeclarationc",
-			"moduleDec",
-			"export class moduleDeclaration",
-			"moduleDeclaration",
-			"emitDottedModuleName",
-			"moduleDecla",
-			"Emmiter",
-			"declFile",
-			"Emmiter",
-			"documentationEmitter",
-			"emmiter",
-			"DocumentationEmitter",
-			"pullDeclarationEmitter",
-			"getDocComments",
-			"emitDocumentationComments",
-			"docAST",
-			"Doc",
-			"moduleDocComments",
-			"VarDoc",
-			"memberDoc",
-			"Doc",
-			"moduleDoc",
-			"importDoc",
-			"Doc",
-			"interfaceDoc",
-			"Doc",
-			"classDoc",
-			"Doc",
-			"ArgDoc",
-			"argDoc",
-			"Doc",
-			"FuncDoc",
-			"funcDoc",
-			"Doc",
-			"BoundDecl",
-			"Doc",
-			"Documentation",
-			"TypeDeclaration",
-			"Documentation",
-			"enum NodeType",
-			"NodeType",
-			"fncOrVarOrSymbolOrModuleFlags",
-			"Decl",
-			"ToDeclFlags",
-			"DeclFlags",
-			"declarationEmitter",
-			"declarationEmmitter",
-			"declarationEmmiter",
-			"decl",
-			"Decl",
-			"declaration",
-			"Declaration",
-			"declarationContainerStack",
-			"DeclarationEmitter",
-			"declFile",
-			"DeclFileWriter",
-			"PullDeclarationEmitter",
-			"pulldeclarationemmiter",
-			"declaration",
-			"Declaration",
-			"PullDeclarationEmitter",
-			"PullDeclarationEmmiter",
-			"PullDocumentationEmmiter",
-			"declareFile",
-			"declarationEmitter",
-			"DeclarationEmitter",
-			"declarationEmitter",
-			"declFile",
-			".io",
-			"createF",
-			"emitD",
-			"BufferedTextWriter",
-			".bod ",
-			".bod",
-			"walkScr",
-			"declarationContainerStack",
-			"pushDeclarationContainer",
-			"PullDecl",
-			"semanticInfoChain",
-			"semanti",
-			"emitJavaScript(",
-			"emitUnit(",
-			".emit",
-			"compiler.",
-			"semanticInfoChain",
-			"emitDeclarations",
-			"decla",
-			"_pEngine",
-			"new core",
-			"new akr",
-			"getColorAt",
-			"_iTableHeight",
-			"readWorldHeight",
-			"z0",
-			"bound",
-			"pDecl",
-			"_allocateData",
-			"useAdvancedIndex",
-			"net",
-			"_pRootNode",
-			"_v3fWorldExtents",
-			"createResource",
-			"_containPointer",
-			"hasVideoBuffer",
-			"initializePointers",
-			"getPointer",
-			"initi",
-			"ini",
-			"getPointDim"
+			"phone",
+			"order-phone-call-modal",
+			"order-phone",
+			"#order-phone-call-modal ",
+			"module-content",
+			"width",
+			"nivoslider",
+			"NivoSlider",
+			"nivoslider",
+			"horizontal-menu-cell-active",
+			"../images",
+			"url(",
+			"@import",
+			"import",
+			"..",
+			"url(",
+			"echo",
+			"sHead",
+			"sBody",
+			"onContentPrepare",
+			"aCallbackArgs",
+			"load",
+			"slider",
+			"direc",
+			"background: url(../images/technology-sep.png) 0 0 repeat-x;",
+			"show",
+			"tag",
+			"every",
+			" Element",
+			"Element",
+			"b-te",
+			"-page",
+			"a:focus",
+			"int",
+			"displayData",
+			"()",
+			"ddd",
+			"post",
+			"<catid><![CDATA[blog]]></catid>",
+			"b-real-time-shaders",
+			"is_numeric",
+			"ctype_d",
+			"path",
+			"#__",
+			"doc",
+			" <?",
+			"limit",
+			"$this->limit",
+			"oChildren",
+			"oModules",
+			"passw",
+			"< >",
+			" ___1096414505( 54 )",
+			"LICENSE_KEY",
+			"licence_key",
+			"licence",
+			"rece",
+			"rec",
+			"disc",
+			"dot",
+			"comments",
+			"EDataTypes",
+			"enum",
+			"inline\": true",
+			"_includeAllTreeSubbranch",
+			"isSceneObject",
+			"attachObject",
+			"isSceneObject",
+			"isDef",
+			"inline",
+			"akra.EEntityTypes.SCENE_OBJECT &&",
+			"isSceneObject",
+			"isInline\": true",
+			"isInline",
+			"inline",
+			"private",
+			"stati",
+			"typedefs",
+			"VertexDeclaration",
+			"vertexdata",
+			"_pVertexDeclaration",
+			" VertexData",
+			"constructors",
+			"constructor(pElements",
+			" VertexDeclaration",
+			"VertexDeclaration",
+			" VertexDeclaration",
+			"DataPool",
+			" ResourceCode",
+			" logger",
+			"byteOffset",
+			"VertexData",
+			"constructors",
+			"VertexDeclaration",
+			"constructors",
+			"SystemFunctionInstruction",
+			"constructors",
+			"constructor",
+			"constr",
+			"...",
+			"\"isOptional\": true",
+			"argumen",
+			"ILogger",
+			"?",
+			"typeOf",
+			"type\": \"{",
+			"rule",
+			"isDef",
+			"IEngine",
+			"null",
+			"\"type\": \"{",
+			"getters",
+			"family",
+			"static",
+			"init",
+			"BLACK",
+			"enum",
+			"call",
+			"Vector",
+			"broadcast",
+			"sid",
+			"broadcast",
+			"akra.logger",
+			"logger",
+			"setAll",
+			"INVALID",
+			"init",
+			"id"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -855,6 +893,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"/new/templates/odserve/images",
+			"hk0xw_",
+			"<>",
+			"$1/*File Write Old*/ // $2$3",
+			"/*File Write Old*/ // $1$2$3",
+			"DocFileWriter",
 			"Emitter",
 			"declAST",
 			"Decl",
@@ -960,6 +1004,122 @@
 	"groups":
 	[
 		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Никита/AppData/Local/Temp/scp53016/domains/x-orange.ru/modules/mod_topcontacts/js/topcontacts.js",
+					"settings":
+					{
+						"buffer_size": 4672,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3522,
+								3522
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 863.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Никита/AppData/Local/Temp/scp08817/domains/x-orange.ru/modules/mod_topcontacts/mailer_email.php",
+					"settings":
+					{
+						"buffer_size": 1026,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								991,
+								991
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Никита/AppData/Local/Temp/scp03840/domains/x-orange.ru/modules/mod_topcontacts/mailer_phone.php",
+					"settings":
+					{
+						"buffer_size": 1029,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								994,
+								994
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Никита/AppData/Local/Temp/scp54135/domains/x-orange.ru/modules/mod_topcontacts/tmpl/default.php",
+					"settings":
+					{
+						"buffer_size": 4097,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3065,
+								3065
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 537.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
 			"sheets":
 			[
 			]
@@ -982,11 +1142,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.615625,
 			1.0
 		],
 		"rows":
@@ -1007,8 +1174,80 @@
 		"selected_items":
 		[
 			[
+				"documen",
+				"compiler/documentationEmitter.ts"
+			],
+			[
+				"",
+				"compiler/ast.ts"
+			],
+			[
+				"akra",
+				"akra-test/akra.js"
+			],
+			[
+				"tsc.js",
+				"local/tsc.js"
+			],
+			[
+				"no",
+				"compiler/nodeTypes.ts"
+			],
+			[
+				"sy",
+				"compiler/symbols.ts"
+			],
+			[
+				"tsc",
+				"compiler/tsc.ts"
+			],
+			[
 				"ty",
 				"compiler/types.ts"
+			],
+			[
+				"emitter",
+				"compiler/emitter.ts"
+			],
+			[
+				"flags",
+				"compiler/flags.ts"
+			],
+			[
+				"ast",
+				"compiler/ast.ts"
+			],
+			[
+				"docume",
+				"compiler/documentationEmitter-old.ts"
+			],
+			[
+				"type",
+				"compiler/typescript.ts"
+			],
+			[
+				"pre",
+				"compiler/precompile.ts"
+			],
+			[
+				"pulldo",
+				"compiler/typecheck/pullDocumentationEmitter.ts"
+			],
+			[
+				"fla",
+				"compiler/flags.ts"
+			],
+			[
+				"decla",
+				"compiler/declarationEmitter.ts"
+			],
+			[
+				"de",
+				"compiler/documentationEmitter.ts"
+			],
+			[
+				"typesc",
+				"compiler/typescript.ts"
 			],
 			[
 				"sym",
@@ -1023,20 +1262,8 @@
 				"compiler/astWalker.ts"
 			],
 			[
-				"emitter",
-				"compiler/emitter.ts"
-			],
-			[
-				"tsc.js",
-				"local/tsc.js"
-			],
-			[
 				"modulede",
 				"compiler/Syntax/tests/emitter/ecmascript5/ModuleDeclaration/ModuleDeclaration10.ts"
-			],
-			[
-				"ast",
-				"compiler/ast.ts"
 			],
 			[
 				"pull",
@@ -1047,20 +1274,8 @@
 				"compiler/nodeTypes.ts"
 			],
 			[
-				"docume",
-				"compiler/documentationEmitter.ts"
-			],
-			[
-				"flags",
-				"compiler/flags.ts"
-			],
-			[
 				"doc",
 				"compiler/documentationEmitter.ts"
-			],
-			[
-				"type",
-				"compiler/typescript.ts"
 			],
 			[
 				"dec",
@@ -1107,15 +1322,7 @@
 				"compiler/emitter.ts"
 			],
 			[
-				"tsc",
-				"local/tsc.js"
-			],
-			[
 				"as",
-				"ast.ts"
-			],
-			[
-				"",
 				"ast.ts"
 			],
 			[
@@ -1321,10 +1528,6 @@
 			[
 				"commo",
 				"common.ts"
-			],
-			[
-				"akra",
-				"akra.ts"
 			],
 			[
 				"isceo",
