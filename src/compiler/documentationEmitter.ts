@@ -309,7 +309,8 @@ module TypeScript {
             if (funcDecl.isConstructor) {
                 oCurrentContext["constructors"] = oCurrentContext["constructors"] || [];
                 oCurrentContext["constructors"].push(oFunction);
-            } else if (!isInterfaceMember) {
+            // } else if (!isInterfaceMember) {
+            } else {
                 oFunction["type"] = this.emitTypeSignature(funcDecl.signature.returnType.type);
                 
                 oFunction["isInline"] = funcDecl.isInline();
