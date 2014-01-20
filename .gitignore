@@ -41,4 +41,6 @@ monaco.editor.json
 *.suo
 TypeScript/bin/
 TypeScript/obj/
-node_modules/
+
+node_modules/*
+node_modules/jake
